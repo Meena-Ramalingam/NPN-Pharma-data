@@ -1,0 +1,125 @@
+{
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": [
+                "Hi there",
+                "Hello",
+                "Is anyone there?",
+                "Hey",
+                "Good day",
+                "What's up?",
+                "Hi!",
+                "Greetings!"
+            ],
+            "responses": [
+                "Hello!",
+                "Hi, how can I assist you today?",
+                "Greetings!",
+                "Hey there!",
+                "Good to see you!"
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "drug_sales_inquiry",
+            "patterns": [
+                "How many units of M01AB were sold today?",
+                "What were the sales for N02BA last month?",
+                "Tell me the sales for R03 this week",
+                "What were the sales numbers for M01AE this year?",
+                "Can you provide the sales figures for N02BE?",
+                "What is the sales volume of N05B for last Friday?"
+            ],
+            "responses": [
+                "The sales for {drug_name} today were {sales_units} units.",
+                "Here are the sales numbers for {drug_name} in the last month: {sales_units} units sold.",
+                "This week, {drug_name} sales reached {sales_units} units.",
+                "So far this year, {drug_name} has sold {sales_units} units."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "drug_information",
+            "patterns": [
+                "What is M01AB used for?",
+                "Can you give me information about N02BA?",
+                "What does R03 treat?",
+                "What kind of drug is M01AE?",
+                "What conditions does N05C treat?",
+                "Tell me about the uses of R06."
+            ],
+            "responses": [
+                "{drug_name} is used to treat {condition}.",
+                "The drug {drug_name} is commonly prescribed for {condition}.",
+                "{drug_name} helps to relieve {condition}.",
+                "{drug_name} is effective in treating {condition}.",
+                "{drug_name} is often used for conditions such as {condition}."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "time_based_sales",
+            "patterns": [
+                "What were the sales on Monday?",
+                "Show me the sales numbers for last Friday.",
+                "Tell me the sales figures for Week 32.",
+                "How were the sales in January?",
+                "Can you show me the sales on weekends?",
+                "What were the sales like during holidays?",
+                "Show me the total sales for the year 2023."
+            ],
+            "responses": [
+                "The sales on {day} were {sales_units} units.",
+                "In {month}, the total sales were {total_sales} units.",
+                "During the weekend, sales reached {weekend_sales} units.",
+                "The sales during the holidays were {holiday_sales} units.",
+                "In the year {year}, the total sales were {yearly_sales} units."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "drug_comparison",
+            "patterns": [
+                "Which drug sold more: M01AB or N02BA?",
+                "Compare the sales of M01AE and R03.",
+                "Which has higher sales: N05B or N05C?",
+                "Did M01AE outsell R06 last month?"
+            ],
+            "responses": [
+                "The drug {drug_1} sold more than {drug_2} with {drug_1_sales} units compared to {drug_2_sales} units.",
+                "In comparison, {drug_1} had higher sales than {drug_2}, with {drug_1_sales} vs {drug_2_sales} units.",
+                "{drug_2} slightly outperformed {drug_1} in sales, selling {drug_2_sales} units."
+            ],
+            "context": [
+                ""
+            ]
+        },
+        {
+            "tag": "sales_trend_analysis",
+            "patterns": [
+                "What are the sales trends for M01AB?",
+                "How are the sales of N02BA trending?",
+                "Is there a seasonal trend in the sales of R03?",
+                "Tell me about the trends for N05B."
+            ],
+            "responses": [
+                "The sales of {drug_name} have been trending {trend_direction} over the past {time_period}.",
+                "Based on recent data, {drug_name} sales are showing a {trend_direction} trend.",
+                "There seems to be a seasonal pattern in {drug_name}'s sales, with peaks in {season}.",
+                "{drug_name} sales have been {trend_direction} consistently over the last few months."
+            ],
+            "context": [
+                ""
+            ]
+        }
+    ]
+}
