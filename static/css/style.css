@@ -163,23 +163,9 @@ section.about {
 .about .btn:hover {
     background-color: #32a278; /* Darker teal */
 }
-.about {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0;
-    height: 100vh; /* Full height of the browser window */
-    background: linear-gradient(to right, #1f2a38, #3c5d7e); /* Dark to light blue gradient */
-    color: #fff;
-}
-
-.about .text-container {
-    width: 50%;
-    padding: 40px;
-}
 
 .about .image-container {
-    width: 50%;
+    width: 70%;
     height: 100vh; /* Make the image container cover half the page height */
     overflow: hidden;
 }
@@ -189,7 +175,6 @@ section.about {
     height: 100%;
     object-fit: cover; /* Ensures the image covers the entire container without distortion */
 }
-
 
 footer {
     background-color: #1f2a38;
@@ -204,4 +189,72 @@ footer {
     background-color: #fff;
     margin: 20px 0;
     border-radius: 5px;
+}
+
+.categories {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #1f2a38;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.category {
+    text-align: center;
+    flex-grow: 1;
+    margin: 0 10px; /* Adjust space between categories */
+    color: #fff;
+}
+
+.category img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-bottom: 50px;
+    border-radius: 50px;
+    transition: transform 0.3s;
+}
+
+.category h3 {
+    font-size: 18px;
+    color: #3cbc8d;
+    margin-top: 10px;
+}
+
+.category img:hover {
+    transform: scale(1.05);
+}
+.second {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    background-color: #1f2a38; /* Background color */
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.fourth{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    background-color: #1f2a38; /* Background color */
+    padding: 0;
+    box-sizing: border-box;
+}
+.third {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    background-color: #1f2a38; /* Background color */
+    padding: 0;
+    box-sizing: border-box;
 }
