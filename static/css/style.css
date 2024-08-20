@@ -258,3 +258,60 @@ footer {
     padding: 0;
     box-sizing: border-box;
 }
+
+.research-section {
+    display: flex;
+    align-items: center;
+    background-color: #2c3e50; /* Background for the card */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 900px; /* Adjusted for a more compact design */
+}
+
+.image-container img {
+    max-width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    width: 500px;
+    height: 600px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.text-container {
+    margin-left: 20px;
+    
+    height:600px;
+}
+
+h2 {
+    color: #1abc9c; /* Matching the text color with the design */
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #ecf0f1;
+    line-height: 1.6;
+    font-size:28px;
+}
+
+.visit-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 30px 40px;
+    background-color: #1abc9c; /* Button background color */
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size:large;
+    border: 2px solid #1abc9c;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.visit-button:hover {
+    background-color: transparent;
+    color: #1abc9c;
+}
