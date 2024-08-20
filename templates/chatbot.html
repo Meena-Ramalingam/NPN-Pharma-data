@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Care</title>
+    <style>
+        /* Reset some basic elements */
+        body, h1, h2, p, ul {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Full-screen background */
+        body {
+            background: linear-gradient(120deg, #1c3b50, #2dc8a2); /* Gradient background */
+            color: white;
+        }
+
+        /* Header styling */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: transparent;
+        }
+
+        header .logo h1 {
+            font-size: 30px;
+            color: #1abc9c;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        header nav ul li a:hover {
+            color: #1abc9c;
+        }
+
+        /* Main content section */
+        .main-content {
+            position: relative;
+            max-width: 100%;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .capsules-image {
+            width: 1882px;
+            height: 1000px;
+            border-radius: 15px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Text overlay */
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #333; /* Text color */
+            background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent background */
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 1000px;
+            text-align: left;
+        }
+
+        .text-overlay h2 {
+            font-size: 35px;
+            color: #333;
+        }
+
+        .text-overlay p {
+            margin-top: 10px;
+            font-size: 25px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Chatbot button styling */
+        .chatbot-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 150px; /* Set the size of the button */
+            height: 150px;
+            background: url('static/images/img-removebg-preview.png') no-repeat center center; /* Path to your chatbot icon */
+            background-size: cover; /* Ensures the icon fits the button */
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow for better visibility */
+            transition: transform 0.3s;
+        }
+
+        .chatbot-button:hover {
+            transform: scale(1.1); /* Scale button slightly on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Health Care</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="main-content">
+        <img src="static/images/chatbot.png" alt="Capsules Image" class="capsules-image">
+        <div class="text-overlay">
+            <h2>Chat-Bot Assistance</h2>
+            <p>Our chatbot is designed to provide real-time insights and support by analyzing pharmaceutical sales trends from our dataset.</p>
+        </div>
+    </section>
+
+    <!-- Chatbot button -->
+    <button class="chatbot-button" onclick="openChatbot()"></button>
+
+    <script>
+        function openChatbot() {
+            // You can add your chatbot opening logic here
+            alert("Chatbot button clicked!");
+        }
+    </script>
+</body>
+</html>

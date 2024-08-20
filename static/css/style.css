@@ -88,7 +88,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #e6e6e6;
+    background-color: linear-gradient(120deg, #1c3b50, #2dc8a2); /* Gradient background */;
 }
 
 header {
@@ -108,7 +108,7 @@ header .logo h1 {
 
 nav ul {
     list-style-type: none;
-    margin: 20px;
+    margin: 40px;
     padding: 0;
 }
 
@@ -120,7 +120,7 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 24px;
 }
 
 section.about {
@@ -139,12 +139,12 @@ section.about {
 }
 
 .about h2 {
-    font-size: 36px;
+    font-size: 40px;
     margin-bottom: 20px;
 }
 
 .about p {
-    font-size: 18px;
+    font-size: 25px;
     line-height: 1.6;
     margin-bottom: 20px;
 }
@@ -314,4 +314,14 @@ p {
 .visit-button:hover {
     background-color: transparent;
     color: #1abc9c;
+}
+
+.drug-alert {
+    display: flex;
+    align-items: center;
+    background-color: #2c3e50; /* Background for the card */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 900px; /* Adjusted for a more compact design */
 }
