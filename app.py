@@ -19,6 +19,8 @@ def mo1ab():
 @app.route('/mo1ae')
 def mo1ae():
     return render_template('mo1ae.html')
-
+@app.route('/no2ba')
+def no2ba():
+    return render_template('no2ba.html')
 if __name__ == "__main__":
     app.run(debug=True)
