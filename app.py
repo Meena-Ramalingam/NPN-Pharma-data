@@ -22,5 +22,15 @@ def mo1ae():
 @app.route('/no2ba')
 def no2ba():
     return render_template('no2ba.html')
+
+@app.route('/no5b')
+def no5b():
+    return render_template('no5b.html')
+
+
+@app.route('/search')
+def search():
+    return render_template('search.html')
+
 if __name__ == "__main__":
     app.run(debug=True)

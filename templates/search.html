@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drug Code Entry</title>
+   <style>
+    /* Reset default styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+.header, .footer {
+    background-color: #2b2b2b;
+    padding: 10px;
+    text-align: center;
+}
+
+.title {
+    color: #3cbc8d;
+    margin: 0;
+    padding: 20px;
+    text-align: left;
+}
+
+.navbar {
+    text-align: right;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.research-section {
+    height: 100vh;
+    background-image: url('path-to-your-image.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.content {
+    z-index: 2;
+    text-align: center;
+}
+
+h2 {
+    font-size: 48px;
+    color: #3cbc8d;
+    margin-bottom: 40px;
+}
+
+form {
+    display: inline-block;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    border: none;
+    border-radius: 25px 0 0 25px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #3cbc8d;
+    color: #fff;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2aab74;
+}
+
+footer {
+    background-color: #2b2b2b;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+   </style>
+</head>
+<body>
+    <header>
+        <h1 class="title">Health Care</h1>
+        <nav class="navbar">
+            <a href="#">Contact Us</a>
+            <a href="#">About Us</a>
+            <a href="#">Chat-Bot Assistance</a>
+            <a href="#">Help</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="research-section">
+            <div class="overlay"></div>
+            <div class="content">
+                <h2>Research</h2>
+                <form id="drugForm">
+                    <input type="text" id="drugCode" name="drugCode" placeholder="Enter The Drug Code.." required>
+                    <button type="submit">Let's See</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <a href="#">Term</a>
+        <a href="#">Privacy</a>
+        <a href="#">Condition</a>
+    </footer>
+
+    <script >document.getElementById('drugForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from submitting the traditional way
+    
+        const drugCode = document.getElementById('drugCode').value.trim().toLowerCase();
+    
+        // Sample drug codes and their respective pages
+        const drugPages = {
+            'mo1ab': 'mo1ab.html',
+            'no2ba': 'no2ba.html',
+            'mo1ae': 'mo1ae.html'
+        };
+    
+        if (drugPages[drugCode]) {
+            window.location.href = drugPages[drugCode]; // Redirect to the appropriate page
+        } else {
+            alert('Invalid Drug Code! Please enter a valid code.');
+        }
+    });
+    </script>
+</body>
+</html>
