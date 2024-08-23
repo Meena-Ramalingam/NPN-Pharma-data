@@ -10,9 +10,8 @@ def index():
 def chatbot():
     return render_template('chatbot.html')
 
-@app.route('/detail')
-def detail():
-    return render_template('detail.html')
+
+
 @app.route('/mo1ab')
 def mo1ab():
     return render_template('mo1ab.html')
@@ -26,4 +25,4 @@ def no2ba():
 def statistics():
     return render_template('statistics.html')
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,port=5001)

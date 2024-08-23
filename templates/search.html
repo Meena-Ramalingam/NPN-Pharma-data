@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drug Code Entry</title>
+    <style>
+    body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Full-screen background */
+body {
+    background: linear-gradient(120deg, #071c2a, #2dc8a2); /* Gradient background */
+    color: white;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #071c2a;
+    position: fixed;
+    top: 0;
+    width: 99%;
+}
+
+header .title {
+    font-size: 40px;
+    color: #1abc9c;
+}
+
+header .navbar {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header .navbar a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+header .navbar a:hover {
+    color: #1abc9c;
+}
+
+/* Main content section */
+main {
+    padding: 80px 0; /* Adjusted padding to account for the fixed header */
+    text-align: center;
+    height:700px;
+}
+
+.research-section {
+    position: relative;
+}
+
+.research-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
+.research-section .content {
+    position: relative;
+    z-index: 2;
+    padding: 350px;
+}
+
+.research-section h2 {
+    font-size: 35px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 80px;
+}
+
+input[type="text"] {
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 300px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1abc9c;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #16a085;
+}
+
+/* Footer styling */
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background: #071c2a;
+    color: white;
+}
+
+footer a {
+    text-decoration: none;
+    color: #ffffff;
+    margin: 0 15px;
+}
+
+footer a:hover {
+    color: #1abc9c;
+}
+
+h2{
+    font-size: 70px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="title">Health Care</h1>
+        <nav class="navbar">
+            <a href="\">Home</a>
+            <a href="\chatbot">Chat-Bot Assistance</a>
+            <a href="#">Help</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="research-section">
+            <div class="overlay"></div>
+            <div class="content">
+                <h2 style="font-size: 60px;">Research</h2>
+                <form id="drugForm">
+                    <input type="text" id="drugCode" name="drugCode" placeholder="Enter The Drug Code.." required>
+                    <button type="submit">Let's See</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+        <a href="#">Conditions</a>
+    </footer>
+
+    <script>
+        document.getElementById('drugForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting in the default way
+
+        var drugCode = document.getElementById('drugCode').value.trim().toLowerCase(); // Get the drug code
+
+        if (drugCode === "mo1ab") {
+            window.location.href = "/mo1ab"; // Redirect to /mo1ab route
+        } else if (drugCode === "mo1ae") {
+            window.location.href = "/mo1ae"; // Redirect to /mo1ae route
+        } else if (drugCode === "no2ba") {
+            window.location.href = "/no2ba"; // Redirect to /no2ba route
+        } else if (drugCode === "no5b") {
+            window.location.href = "/no5b"; // Redirect to /no5b route
+        } else {
+            alert("Invalid Drug Code. Please try again."); // Show an alert for an invalid code
+        }
+    });
+    </script>
+</body>
+</html>
