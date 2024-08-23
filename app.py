@@ -10,9 +10,8 @@ def index():
 def chatbot():
     return render_template('chatbot.html')
 
-@app.route('/detail')
-def detail():
-    return render_template('detail.html')
+
+
 @app.route('/mo1ab')
 def mo1ab():
     return render_template('mo1ab.html')
@@ -27,10 +26,20 @@ def no2ba():
 def no5b():
     return render_template('no5b.html')
 
+@app.route('/no5c')
+def no5c():
+    return render_template('no5c.html')
+
+@app.route('/no2be')
+def no2be():
+    return render_template('no2be.html')
 
 @app.route('/search')
 def search():
     return render_template('search.html')
 
+
+
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,port=5001)
