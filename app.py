@@ -22,5 +22,8 @@ def mo1ae():
 @app.route('/no2ba')
 def no2ba():
     return render_template('no2ba.html')
+@app.route('/statistics')
+def statistics():
+    return render_template('statistics.html')
 if __name__ == "__main__":
     app.run(debug=True)
