@@ -131,7 +131,7 @@
     </header>
 
     <section class="main-content">
-        <img src="static/images/chatbot.png" alt="Capsules Image" class="capsules-image">
+        <!-- <img src="static/images/chatbot.png" alt="Capsules Image" class="capsules-image" onclick="openChatbot()"> -->
         <div class="text-overlay">
             <h2>Chat-Bot Assistance</h2>
             <p>Our chatbot is designed to provide real-time insights and support by analyzing pharmaceutical sales trends from our dataset.</p>
@@ -139,13 +139,15 @@
     </section>
 
     <!-- Chatbot button -->
-    <button class="chatbot-button" onclick="openChatbot()"></button>
-
+    <img src="static/images/chatbot.png" alt="Capsules Image" class="capsules-image" onclick="openChatbot()">
+    <script src="https://cdn.botpress.cloud/webchat/v2.1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/0852c8fa-1d34-4f40-8f0d-9dc970425da5/webchat/v2.1/config.js"></script>
+    
     <script>
         function openChatbot() {
-            // You can add your chatbot opening logic here
-            alert("Chatbot button clicked!");
+            window.botpressWebChat.init();  // Opens the Botpress chatbot when the image is clicked
         }
+    </script>
     </script>
 </body>
 </html>
