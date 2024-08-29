@@ -37,10 +37,13 @@ def no2ba():
 @app.route('/statistics')
 def statistics():
     return render_template('statistics.html')
-
 @app.route('/details')
 def details():
     return render_template('details.html')
 
+
+@app.route('/drugs')
+def drugs():
+    return render_template('drugs.html')
 if __name__ == "__main__":
     app.run(debug=True,port=5001)
