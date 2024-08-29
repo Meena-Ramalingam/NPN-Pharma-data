@@ -243,10 +243,10 @@ footer {
     transform: scale(1.05);
 } */
 
-.categories {
+/* .categories {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
-    gap: 20px; /* Space between the grid items */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
     padding: 40px;
     background-color: #1f2a38;
     border-radius: 5px;
@@ -276,7 +276,62 @@ footer {
 
 .category img:hover {
     transform: scale(1.05);
+} */ 
+.categories-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100vw; /* Full viewport width */
+    height: 350px; /* Larger height to accommodate the text */
 }
+
+.categories {
+    display: flex;
+    align-items: center;
+    background-color: #1f2a38;
+    border-radius: 5px;
+    gap: 20px; /* Add spacing between images */
+    animation: scroll 20s linear infinite; /* Infinite scrolling animation */
+}
+
+.category {
+    text-align: center;
+    flex-shrink: 0;
+    color: #fff;
+}
+
+.category img {
+    width: 500px;
+    height: 300px; /* Image size */
+    margin-bottom: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.category h3 {
+    font-size: 18px;
+    color: #3cbc8d;
+    margin-top: 5px; /* Space between image and text */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.category img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Keyframe for infinite loop scrolling */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-100% / 2)); /* Scroll through the entire duplicated set */
+    }
+}
+
+
+
+
 
 .second {
     display: flex;
