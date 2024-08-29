@@ -38,5 +38,9 @@ def no2ba():
 def statistics():
     return render_template('statistics.html')
 
+@app.route('/drugs')
+def drugs():
+    return render_template('drugs.html')
+
 if __name__ == "__main__":
     app.run(debug=True,port=5001)
