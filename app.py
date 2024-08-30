@@ -60,7 +60,7 @@ def details():
 @app.route('/drugs')
 def drugs():
     return render_template('drugs.html')
-
+# Path to the models folder
 models_folder = 'models'
 
 # Load models for weekly and daily predictions
@@ -70,16 +70,29 @@ models_weekly = {}
 models_daily = {}
 
 for drug in drugs:
-    with open(os.path.join(models_folder, f'auto_arima_model_Week_{drug}.pkl'), 'rb') as file:
-        models_weekly[drug] = pickle.load(file)
-    with open(os.path.join(models_folder, f'auto_arima_model_{drug}.pkl'), 'rb') as file:
-        models_daily[drug] = pickle.load(file)
+    weekly_model_path = os.path.join(models_folder, f'auto_arima_model_Week_{drug}.pkl')
+    daily_model_path = os.path.join(models_folder, f'auto_arima_model_{drug}.pkl')
+
+    # Ensure the file exists before trying to load it
+    if os.path.exists(weekly_model_path):
+        with open(weekly_model_path, 'rb') as file:
+            models_weekly[drug] = pickle.load(file)
+    else:
+        print(f"Weekly model for {drug} not found.")
+
+    if os.path.exists(daily_model_path):
+        with open(daily_model_path, 'rb') as file:
+            models_daily[drug] = pickle.load(file)
+    else:
+        print(f"Daily model for {drug} not found.")
+
 
 
 @app.route('/submit', methods=['POST'])
 def submit():
     date_type = request.form.get('dateType')
 
+    result = {}
     if date_type == 'daily':
         single_date = request.form.get('singleDate')
         if single_date:
@@ -98,10 +111,14 @@ def predict_daily_sales(single_date):
 
     predictions = {}
     for drug in drugs:
-        predictions[drug] = models_daily[drug].predict(n_periods=len(date_range)) / 30
+        if drug in models_daily:
+            predictions[drug] = models_daily[drug].predict(n_periods=len(date_range)) / 30
 
     predictions_df = pd.DataFrame(predictions, index=date_range)
-    result = predictions_df.loc[single_date].to_dict()
+    if single_date in predictions_df.index:
+        result = predictions_df.loc[single_date].to_dict()
+    else:
+        result = {"error": "Date out of prediction range"}
     return result
 
 def predict_weekly_sales(start_date, end_date):
@@ -109,10 +126,14 @@ def predict_weekly_sales(start_date, end_date):
 
     predictions = {}
     for drug in drugs:
-        predictions[drug] = models_weekly[drug].predict(n_periods=len(date_range))
+        if drug in models_weekly:
+            predictions[drug] = models_weekly[drug].predict(n_periods=len(date_range))
 
     predictions_df = pd.DataFrame(predictions, index=date_range)
-    result = predictions_df.loc[end_date].to_dict()
+    if end_date in predictions_df.index:
+        result = predictions_df.loc[end_date].to_dict()
+    else:
+        result = {"error": "Date out of prediction range"}
     return result
 
 
