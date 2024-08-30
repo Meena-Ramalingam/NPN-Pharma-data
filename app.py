@@ -3,7 +3,8 @@ import pickle
 import pandas as pd
 import os
 import sys
-import pdarima
+# import pdarima
+
 print(sys.path)
 
 
