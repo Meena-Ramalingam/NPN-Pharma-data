@@ -10,21 +10,7 @@ import sys
 
 app = Flask(__name__)
 
-# Path to the models folder
-models_folder = 'models'
 
-# List of drugs
-drugs = ['M01AB', 'M01AE', 'N02BA', 'N02BE', 'N05B', 'N05C', 'R03', 'R06']
-
-# Load models for weekly and daily predictions
-models_weekly = {}
-models_daily = {}
-
-for drug in drugs:
-    with open(os.path.join(models_folder, f'auto_arima_model_Week_{drug}.pkl'), 'rb') as file:
-        models_weekly[drug] = pickle.load(file)
-    with open(os.path.join(models_folder, f'auto_arima_model_{drug}.pkl'), 'rb') as file:
-        models_daily[drug] = pickle.load(file)
 
 # Routes for rendering pages
 @app.route('/')
@@ -75,7 +61,21 @@ def details():
 def drugs():
     return render_template('drugs.html')
 
-# Route for handling date type selection and predictions
+models_folder = 'models'
+
+# Load models for weekly and daily predictions
+drugs = ['M01AB', 'M01AE', 'N02BA', 'N02BE', 'N05B', 'N05C', 'R03', 'R06']
+
+models_weekly = {}
+models_daily = {}
+
+for drug in drugs:
+    with open(os.path.join(models_folder, f'auto_arima_model_Week_{drug}.pkl'), 'rb') as file:
+        models_weekly[drug] = pickle.load(file)
+    with open(os.path.join(models_folder, f'auto_arima_model_{drug}.pkl'), 'rb') as file:
+        models_daily[drug] = pickle.load(file)
+
+
 @app.route('/submit', methods=['POST'])
 def submit():
     date_type = request.form.get('dateType')
@@ -89,38 +89,6 @@ def submit():
         end_date = request.form.get('endDate')
         if start_date and end_date:
             result = predict_weekly_sales(start_date, end_date)
-    
-    return jsonify(result)
-
-# Functions to predict daily and weekly sales
-def predict_daily_sales(single_date):
-    start_date = '2019-11-30'  # Last date in the dataset
-    date_range = pd.date_range(start=start_date, end=single_date, freq='D')
-
-    predictions = {}
-    for drug in drugs:
-        predictions[drug] = models_daily[drug].predict(n_periods=len(date_range)) / 30
-
-    predictions_df = pd.DataFrame(predictions, index=date_range)
-    result = predictions_df.loc[single_date].to_dict()
-    return result
-
-def predict_weekly_sales(start_date, end_date):
-    date_range = pd.date_range(start=start_date, end=end_date, freq='7D')
-
-    predictions = {}
-    for drug in drugs:
-        predictions[drug] = models_weekly[drug].predict(n_periods=len(date_range))
-
-    predictions_df = pd.DataFrame(predictions, index=date_range)
-    result = predictions_df.loc[end_date].to_dict()
-    return result
-
-# Route for predicting single date (additional functionality)
-@app.route('/predict_single', methods=['POST'])
-def predict_single():
-    single_date = request.form['single_date']
-    date_range = pd.date_range(start=single_date, end=single_date, freq='D')
     
     return jsonify(result)
 
