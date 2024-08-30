@@ -5,7 +5,7 @@ import os
 import sys
 # import pdarima
 
-print(sys.path)
+
 
 
 app = Flask(__name__)
