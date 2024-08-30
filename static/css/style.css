@@ -126,7 +126,7 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 section.about {
@@ -147,15 +147,15 @@ section.about {
 }
 
 .about h1{
-    font-size: xx-large;
+    font-size:50px;
 }
 .about h2 {
-    font-size: 40px;
+    font-size: 30px;
     margin-bottom: 20px;
 }
 
 .about p {
-    font-size: 25px;
+    font-size: 20px;
     line-height: 1.6;
     margin-bottom: 20px;
 }

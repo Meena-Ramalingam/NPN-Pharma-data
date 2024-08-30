@@ -1,145 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Health Care</title>
     <style>
-        /* Reset some basic elements */
-        body,h1ś p, ul {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-        }
+      /* Reset some basic elements */
+      body,
+      h1,
+      p,
+      ul {
+        margin: 0;
+        padding: 0;
+        font-family: "Arial", sans-serif;
+      }
 
-        /* Full-screen background */
-        body {
-            background: linear-gradient(120deg, #071c2a, #2dc8a2); /* Gradient background */
-            color: white;
-        }
+      /* Full-screen background */
+      body {
+        background: linear-gradient(
+          120deg,
+          #071c2a,
+          #2dc8a2
+        ); /* Gradient background */
+        color: rgb(255, 255, 255);
+      }
 
-        /* Header styling */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background: #071c2a;
-            position: fixed;
-            top:0;
-            width:99%;
-        }
+      /* Header styling */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background: #071c2a;
+        position: fixed;
+        top: 0;
+        width: 99%;
+      }
 
-        h1{
+      h1 {
         margin-top: 40px;
-        /* position:relative; */
         font-size: 50px;
-        }
-        .mo1ab{
-            margin-top:70px;
-        }
-        header .logo h1 {
-            font-size: 40px;
-            color: #1abc9c;
-        }
+      }
 
-        header nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
+      .mo1ab {
+        margin-top: 70px;
+        max-width: 100%;
+        padding: 50px 0;
+        text-align: center;
+      }
 
-        header nav ul li a {
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: bold;
-        }
+      header .logo h1 {
+        font-size: 40px;
+        color: #1abc9c;
+      }
 
-        header nav ul li a:hover {
-            color: #1abc9c;
-        }
+      header nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
 
-        /* Main content section */
-        .mo1ab {
-            position: center;
-            max-width: 100%;
-            padding: 50px 0;
-            text-align: center;
-        }
+      header nav ul li a {
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: bold;
+      }
 
-        p{
-            font-size: 25px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            color: #02131e;
-        }
+      header nav ul li a:hover {
+        color: #1abc9c;
+      }
 
+      /* Main content section */
+      p {
+        font-size: 25px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        color: white;
+      }
 
-  
-.text-container {
-    position: relative; /* Allows positioning of child elements */
-    width: 60%; /* Adjust the width as needed */
-    margin: 0 auto; /* Centers the box horizontally */
-    padding: 20px; /* Adds padding inside the box */
-    border: 2px solid teal; /* Teal green border */
-    border-radius: 10px; /* Rounds the corners */
-    background-color: #f9f9f9; /* Light background color */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
-    text-align: center; /* Centers the text inside the box */
-}
+      /* Text container styling */
+      .text-container {
+        position: relative; /* Allows positioning of child elements */
+        width: 60%; /* Adjust the width as needed */
+        margin: 0 auto; /* Centers the box horizontally */
+        padding: 20px; /* Adds padding inside the box */
+        border: 5px solid teal; /* Teal green border */
+        border-radius: 10px; /* Rounds the corners */
+        background: linear-gradient(
+          120deg,
+          #071c2a,
+          #2dc8a2
+        ); /* Gradient background */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+        text-align: center; /* Centers the text inside the box */
+      }
 
-.left-bottom-image {
-    position: absolute;
-    bottom: 10px; /* Adjust the spacing from the bottom */
-    left: 0px; /* Adjust the spacing from the left */
-    width: 500px; /* Adjust the size as needed */
-    height:500px;
-    height: auto; /* Maintains the aspect ratio */
-}
+      /* Image positioning */
+      .left-bottom-image,
+      .right-bottom-image {
+        position: absolute;
+        bottom: 10px; /* Adjust the spacing from the bottom */
+        width: 500px;
+        height: auto; /* Maintains the aspect ratio */
+      }
 
-.right-bottom-image {
-    position: absolute;
-    bottom: 10px; /* Adjust the spacing from the bottom */
-    right: 10px; /* Adjust the spacing from the right */
-    width: 500px;
-     /* Adjust the size as needed */
-    height: 500px; /* Maintains the aspect ratio */
-}
+      .left-bottom-image {
+        left: 0px; /* Adjust the spacing from the left */
+      }
 
-
-       
-        
-       
+      .right-bottom-image {
+        right: 10px; /* Adjust the spacing from the right */
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="logo">
-            <h1>Pharma Pulse</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="\">Home</a></li>
-                <li><a href="\search">Research</a></li>
-                <li><a href="\statistics">Charts</a></li>
-            </ul>
-        </nav>
+      <div class="logo">
+        <h1>Pharma Pulse</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="\">Home</a></li>
+          <li><a href="\search">Research</a></li>
+          <li><a href="\statistics">Charts</a></li>
+        </ul>
+      </nav>
     </header>
 
-   <section class="mo1ab">
-    <h1>N05B - Anxiolytics</h1>
+    <section class="mo1ab">
+      <h1>N05B - Anxiolytics</h1>
       <!-- <h2>  Derivatives (NSAIDs)</h2> -->
-   <section class="text-container">
-     <p>Common Drugs: Paracetamol (Acetaminophen)</p>
-     <p>Uses: Paracetamol is commonly used to relieve mild to moderate pain and reduce fever. Unlike NSAIDs, it does not have significant anti-inflammatory effects.</p>
-    <p>Side Effects: Generally well-tolerated but can cause liver damage in high doses or with prolonged use, particularly when combined with alcohol.</p>
+      <section class="text-container">
+        <p>Common Drugs: Paracetamol (Acetaminophen)</p>
+        <p>
+          Uses: Paracetamol is commonly used to relieve mild to moderate pain
+          and reduce fever. Unlike NSAIDs, it does not have significant
+          anti-inflammatory effects.
+        </p>
+        <p>
+          Side Effects: Generally well-tolerated but can cause liver damage in
+          high doses or with prolonged use, particularly when combined with
+          alcohol.
+        </p>
+      </section>
     </section>
-   </section>
-   <img src="static/images/drug1.png" alt="Left Image" class="left-bottom-image">
-   <img src="static/images/drug2.png" alt="Right Image" class="right-bottom-image">
-
-
-    
-  
-</body>
+    <img
+      src="static/images/drug1.png"
+      alt="Left Image"
+      class="left-bottom-image"
+    />
+    <img
+      src="static/images/drug2.png"
+      alt="Right Image"
+      class="right-bottom-image"
+    />
+  </body>
 </html>
