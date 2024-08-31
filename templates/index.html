@@ -104,7 +104,7 @@ nav ul li a {
     margin:1em;
 }
 
-.card {
+/* .card {
     background: #ffffff;
     padding: 10px;
     margin: 10px 0;
@@ -126,10 +126,44 @@ nav ul li a {
 }
 
 .card:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5); 
+} */
+
+.card {
+    background: #ffffff;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
+    flex-basis: 30%;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none; /* Ensure text is not underlined */
+    color: inherit; /* Inherit text color */
+}
+
+.card h3 {
+    color: #112a75;
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+.card p {
+    font-size: 1.5em;
+}
+
+.card:hover {
     transform: scale(1.02); /* Slight zoom effect on hover */
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5); /* More pronounced shadow */
     background-color: #e0e7ff;
 }
+
+.card.highlight {
+    border: 2px solid #4CAF50; /* Example highlight effect */
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5); /* Enhanced shadow */
+}
+
 
 @media (max-width: 768px) {
     .cards {
@@ -230,18 +264,22 @@ nav ul li a {
             <div class="container">
                 <h2>Our Functionalities</h2>
                 <div class="cards">
-                    <div class="card" onclick="highlightCard(this)">
+                  
+                    <div class="card" data-url="/forecasting" onclick="highlightCard(this)">
                         <h3>Model and Prediction</h3>
                         <p>Predict future trends and sales with high accuracy using our sophisticated predictive analytics models.</p>
                     </div>
-                    <div class="card" onclick="highlightCard(this)">
+                    
+                    <div class="card" data-url="/dashboard" onclick="highlightCard(this)">
                         <h3>Dashboard</h3>
                         <p>Visualize and manage your data through an intuitive dashboard that provides real-time insights and customizable reports</p>
                     </div>
-                    <div class="card" onclick="highlightCard(this)">
+                    
+                    <div class="card" data-url="/drug-info" onclick="highlightCard(this)">
                         <h3>Drug Information</h3>
                         <p>Access detailed information on all drugs with a comprehensive view that provides insights into drug categories, uses, and effects.</p>
                     </div>
+                    
                 </div>
             </div>
         </section>
@@ -287,10 +325,26 @@ nav ul li a {
         
     </div>
     
-    <script>function highlightCard(card) {
-        // Toggle the highlight
-        card.classList.toggle('highlight');
-    }
+    <script>
+    function highlightCard(card) {
+    // Toggle the highlight
+    card.classList.add('highlight');
+    
+    // Get the URL from the data attribute
+    const url = card.getAttribute('data-url');
+    
+    // Redirect after a short delay to allow the highlight effect to be visible
+    setTimeout(() => {
+        card.classList.remove('highlight'); // Remove the highlight before redirecting
+        window.location.href = url;
+    }, 300); // Adjust the delay as needed to match the duration of your highlight effect
+}
+
+
+    // <--function highlightCard(card) {
+    //     // Toggle the highlight
+    //     card.classList.toggle('highlight');
+    // } -->
     
     // Optional: Add CSS class to style highlighted cards
     // Place this in styles.css
