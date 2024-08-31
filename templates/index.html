@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Raleway:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>Pharma Pulse</title>
     <style>
  
@@ -10,11 +11,12 @@
             height: 100%; 
             margin: 0; 
             padding: 0; 
-            font-size: 1rem; /* Set the base font size to 10px (1rem = 10px) */
+            font-size: 1rem; 
+            font-family: 'Poppins', sans-serif; /* Set base font */
         }
 
         body {
-            font-style:'helvetico';
+            font-family: 'Roboto', sans-serif; /* Set body font */
             background-color: #ebe4e4;
         }
 
@@ -28,7 +30,7 @@
             left: 0;
             right: 0;
             z-index: 1000; 
-            height: 3rem; /* 80px -> 5rem */
+            height: 3rem;
         }
 
         .page-wrapper {
@@ -42,13 +44,13 @@
             overflow:auto;
             box-sizing: border-box;
 
-                /* Hide scrollbar but keep functionality */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+            scrollbar-width: none; 
+            -ms-overflow-style: none;
         }
+
         .page-wrapper::-webkit-scrollbar {
-    display: none; /* Safari and Chrome */
-}
+            display: none; 
+        }
 
         .container {
             width: 90%;
@@ -76,7 +78,8 @@
 
         nav h1 {
             margin: 0.1875rem;
-            font-size: 2rem; /* 3em -> 1.875rem */
+            font-size: 2rem;
+            font-family: 'Raleway', sans-serif; /* Font for the title */
         }
 
         nav ul {
@@ -84,82 +87,84 @@
             margin: 0;
             padding: 0;
             display: flex;
-            
         }
 
         nav ul li {
-            margin-left: 0.25rem; /* 0.4em -> 0.25rem */
-            
+            margin-left: 0.25rem; 
         }
 
         nav ul li a {
             color: #fff;
             text-decoration: none;
-            font-size: 0.9375rem; /* 1.5em -> 0.9375rem */
-            padding: 0.3125rem 0.625rem; /* 0.5em 1em -> 0.3125rem 0.625rem */
+            font-size: 0.9375rem;
+            padding: 0.3125rem 0.625rem;
             transition: background-color 0.3s ease;
+            font-family: 'Raleway', sans-serif; /* Font for nav links */
         }
 
         nav ul li a:hover {
             background-color: #112a75;
-            border-radius: 0.3125rem; /* 0.5em -> 0.3125rem */
+            border-radius: 0.3125rem; 
         }
 
         .about-us, .functionalities {
-            padding: 1.875rem 0; /* 30px -> 1.875rem */
+            padding: 1.875rem 0; 
             color: #333;
         }
 
         .about-us h2, .functionalities h2 {
             color: #14265a;
-            margin-bottom: 1.25rem; /* 20px -> 1.25rem */
-            font-size: 2rem; /* 2em -> 1.25rem */
+            margin-bottom: 1.25rem; 
+            font-size: 2rem; 
+            font-family: 'Poppins', sans-serif; /* Font for section headers */
         }
 
         .about-us p, .functionalities p {
-            font-size: 1em; /* 1.5em -> 0.9375rem */
-            line-height: 1.5rem; /* 1.5em -> 1.5rem */
+            font-size: 1em; 
+            line-height: 1.5rem; 
         }
 
         .cards {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            margin: 0.625rem; /* 1em -> 0.625rem */
+            margin: 0.625rem; 
         }
 
         .card {
             background: #ffffff;
-            padding: 0.625rem; /* 10px -> 0.625rem */
-            margin: 0.625rem 0; /* 10px 0 -> 0.625rem 0 */
-            box-shadow: 0px 0px 0.9375rem rgba(0, 0, 0, 0.8); /* 15px -> 0.9375rem */
+            padding: 0.625rem; 
+            margin: 0.625rem 0; 
+            box-shadow: 0px 0px 0.9375rem rgba(0, 0, 0, 0.8); 
             flex-basis: 30%;
-            border-radius: 0.5rem; /* 8px -> 0.5rem */
+            border-radius: 0.5rem; 
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
             text-decoration: none; 
             color: inherit;
+            font-family: 'Roboto', sans-serif; /* Font for card text */
         }
 
         .card h3 {
             color: #112a75;
-            margin-bottom: 0.9375rem; /* 15px -> 0.9375rem */
-            font-size: 1.25rem; /* 2em -> 1.25rem */
+            margin-bottom: 0.9375rem; 
+            font-size: 1.25rem; 
+            font-family: 'Poppins', sans-serif; /* Font for card titles */
         }
 
         .card p {
-            font-size: 0.9375rem; /* 1.5em -> 0.9375rem */
+            font-size: 0.9375rem; 
         }
 
         .card:hover {
             transform: scale(1.02); 
-            box-shadow: 0px 0px 1.5625rem rgba(0, 0, 0, 0.5); /* 25px -> 1.5625rem */
+            box-shadow: 0px 0px 1.5625rem rgba(0, 0, 0, 0.5); 
             background-color: #e0e7ff;
         }
 
         .card.highlight {
-            border: 0.125rem solid #4CAF50; /* 2px -> 0.125rem */
-            box-shadow: 0px 0px 1.5625rem rgba(0, 0, 0, 0.5); /* 25px -> 1.5625rem */
+            border: 0.125rem solid #4CAF50; 
+            box-shadow: 0px 0px 1.5625rem rgba(0, 0, 0, 0.5); 
         }
 
         @media (max-width: 768px) {
@@ -178,46 +183,48 @@
 
             nav ul li {
                 display: block;
-                padding: 0.9375rem 0; /* 15px -> 0.9375rem */
+                padding: 0.9375rem 0; 
             }
         }
 
         .drugs h2 {
             color: #14265a;
-            margin-bottom: 1.25rem; /* 20px -> 1.25rem */
-            font-size: 2rem; /* 2em -> 1.25rem */
+            margin-bottom: 1.25rem; 
+            font-size: 2rem; 
+            font-family: 'Poppins', sans-serif; /* Font for Drugs section header */
         }
 
         .drugs .cards {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-gap: 1.25rem; /* 20px -> 1.25rem */
-            margin: 0.625rem; /* 1em -> 0.625rem */
+            grid-gap: 1.25rem; 
+            margin: 0.625rem;
         }
 
         .drugs .card {
             background: #ffffff;
-            padding: 0.625rem; /* 10px -> 0.625rem */
-            box-shadow: 0px 0px 0.9375rem rgba(0, 0, 0, 0.8); /* 15px -> 0.9375rem */
-            border-radius: 0.5rem; /* 8px -> 0.5rem */
+            padding: 0.625rem; 
+            box-shadow: 0px 0px 0.9375rem rgba(0, 0, 0, 0.8); 
+            border-radius: 0.5rem; 
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
         }
 
         .drugs .card h3 {
             color: #112a75;
-            margin-bottom: 0.9375rem; /* 15px -> 0.9375rem */
-            font-size: 1.125rem; /* 1.8em -> 1.125rem */
+            margin-bottom: 0.9375rem; 
+            font-size: 1.125rem; 
             font-weight: 300;
+            font-family: 'Poppins', sans-serif; /* Font for Drugs card titles */
         }
 
         .drugs .card p {
-            font-size: 0.75rem; /* 1.2em -> 0.75rem */
+            font-size: 0.75rem; 
         }
 
         .drugs .card:hover {
             transform: scale(1.02); 
-            box-shadow: 0px 1.5625rem 1.5625rem rgba(0, 0, 0, 0.2), 1.5625rem 0px 1.5625rem rgba(0, 0, 0, 0.2); /* 25px -> 1.5625rem */
+            box-shadow: 0px 1.5625rem 1.5625rem rgba(0, 0, 0, 0.2), 1.5625rem 0px 1.5625rem rgba(0, 0, 0, 0.2); 
             background-color: #e0e7ff;
         }
 
@@ -232,11 +239,12 @@
                 grid-template-columns: 1fr;
             }
         }
+
         .bp-widget-launcher {
-            width: 1rem !important; /* Adjust the width */
-            height: 1rem !important; /* Adjust the height */
-            bottom: 1rem !important; /* Adjust the position if needed */
-            right: 1rem !important;  /* Adjust the position if needed */
+            width: 1rem !important; 
+            height: 1rem !important; 
+            bottom: 1rem !important; 
+            right: 1rem !important;  
             size: 2rem;
         }
 </style>
@@ -377,6 +385,3 @@ window.addEventListener('load', function() {
 
 </body>
 </html>
-
-
-
