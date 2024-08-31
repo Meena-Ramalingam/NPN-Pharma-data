@@ -17,6 +17,10 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/forecasting')
+def forecasting():
+    return render_template('forecasting.html')
+
 @app.route('/chatbot')
 def chatbot():
     return render_template('chatbot.html')

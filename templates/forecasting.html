@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharma Pulse - Forecasting</title>
+    <style>
+      html, body {
+    height: 100%; /* Full height for html and body */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    font-size: 16px; /* Base font size */
+}
+
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+header {
+    background-color: #1f2d56;
+    color: #fff;
+    padding: 1em 0; /* Adjusted padding */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em; /* Adjusted padding for smaller margin */
+    max-width: 100%; /* Ensure full width */
+    margin: auto; /* Center horizontally */
+}
+
+nav h1 {
+    margin: 0.3em;
+    font-size: 3em; /* Font size in em */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 0.4em; /* Margin in em */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em; /* Font size in em */
+    padding: 0.5em 1em; /* Padding in em */
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #112a75;
+    border-radius: 0.5em; /* Border radius in em */
+}
+
+.forecasting {
+    padding: 1em; /* Padding in em */
+    background-color: #fff;
+    margin: 0 1em; /* Add margin on left and right sides */
+    width: calc(100% - 2em); /* Full width minus margins */
+    overflow: auto;
+}
+
+.forecasting .container {
+    max-width: none; /* Remove max-width to stretch the content */
+    margin: 0; /* Remove margin to ensure full width */
+    padding: 0; /* Remove padding to use full width */
+}
+
+.forecasting .content {
+    display: flex;
+    align-items: flex-start; /* Align items to the start of the flex container */
+    gap: 1em; /* Gap between image and text content */
+}
+
+.forecasting .plot {
+    flex: 1; /* Flex to take available space */
+    max-width: 50%; /* Maximum width for the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 0.5em; /* Border radius in em */
+    box-shadow: 0px 0px 1em rgba(0, 0, 0, 0.1); /* Shadow with em units */
+}
+
+.forecasting .text-content {
+    flex: 1; /* Flex to take available space */
+    max-width: 45%; /* Maximum width for text content */
+}
+
+.forecasting h2 {
+    color: #1f2d56;
+    font-size: 2em; /* Font size in em */
+    margin-bottom: 1em; /* Margin below heading */
+}
+
+.forecasting h3 {
+    color: #1f2d56;
+    font-size: 1.5em; /* Font size in em */
+    margin-bottom: 0.5em; /* Margin below heading */
+}
+
+.forecasting p {
+    font-size: 1.3em; /* Font size in em */
+    margin-bottom: 1em; /* Margin below paragraph */
+    color: #333;
+}
+
+.btn-prediction {
+    background-color: #1f2d56;
+    color: #fff;
+    padding: 1em 2em; /* Padding in em */
+    border: none;
+    border-radius: 0.5em; /* Border radius in em */
+    font-size: 1.2em; /* Font size in em */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 1em auto 0; /* Center button and add top margin */
+}
+
+.btn-prediction:hover {
+    background-color: #112a75;
+}
+
+@media (max-width: 768px) {
+    .forecasting .content {
+        flex-direction: column; /* Stack content vertically on small screens */
+        align-items: center; /* Center horizontally */
+    }
+
+    .forecasting .plot {
+        max-width: 100%; /* Make image full width on small screens */
+    }
+
+    .forecasting .text-content {
+        max-width: 100%; /* Full width on small screens */
+        text-align: center; /* Center text on small screens */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1>Pharma Pulse</h1>
+                <ul>
+                    <li><a href="\">Home</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Drugs</a></li>
+                    <li><a href="\forecasting">Forecasting</a></li>
+                    <li><a href="\dashboard">Dashboard</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="forecasting">
+        <div class="container">
+            <div class="content">
+                <img src="static/images/barchart.jpeg" alt="Bar Plot" class="plot">
+                <div class="text-content">
+                    <h2>Auto ARIMA Model</h2>
+                    <p>The Auto ARIMA (Auto-Regressive Integrated Moving Average) model is a sophisticated statistical tool designed for time series forecasting. It automates the process of selecting the best parameters for the ARIMA model, which includes differencing, autoregressive terms, and moving average terms. This model is particularly effective in handling complex time series data with seasonality and trends, as it adjusts to the data's intrinsic characteristics without requiring extensive manual tuning. By automating parameter selection and optimizing model parameters, Auto ARIMA simplifies the forecasting process and enhances the accuracy of predictions. It is a robust choice for various forecasting tasks where capturing temporal patterns and seasonal effects is crucial.</p>
+                    
+                    <h3>Model Performance Overview</h3>
+                    <p>In our comprehensive analysis, we evaluated several forecasting models, including Seasonal Naive, Auto ARIMA, Prophet, and LSTM. The bar plot on the left provides a visual comparison of these models' performance, measured by Mean Absolute Percentage Error (MAPE). From the plot, it is evident that the Auto ARIMA model delivers the most accurate forecasts, evidenced by its lowest MAPE value. This result underscores Auto ARIMA's ability to effectively model the underlying data patterns and trends. The comparison highlights that while other models like Prophet and LSTM also perform well, Auto ARIMA consistently provides more reliable predictions, making it the preferred choice for our forecasting needs.</p>
+                </div>
+            </div>
+            <button class="btn-prediction" onclick="window.location.href='/prediction';">Check Prediction</button>
+
+        </div>
+    </section>
+</body>
+</html>
