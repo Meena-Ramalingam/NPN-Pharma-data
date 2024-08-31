@@ -21,6 +21,10 @@ def index():
 def forecasting():
     return render_template('forecasting.html')
 
+@app.route('/drug-info')
+def drug():
+    return render_template('drug.html')
+
 @app.route('/aboutus')
 def aboutus():
     return render_template('aboutus.html')
