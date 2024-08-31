@@ -3,121 +3,310 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Care</title>
-    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Pharma Pulse</title>
+    <style>
+  html, body {
+    height: 100%; /* Full height for body and html */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ebe4e4; /* Light gray background for the page */
+    overflow: hidden; /* Prevent body from scrolling */
+}
+
+nav {
+    background: #1a2b5c;
+    color: #ffffff;
+    padding: 17px 0;
+    border-bottom: #6b6969 3px solid;
+    position: fixed; /* Fix the navbar to the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it stays above other content */
+    height: 80px; /* Adjust this value based on your actual navbar height */
+}
+
+.page-wrapper {
+    background-color: #ffffff; /* White background for the content box */
+    padding: 20px; /* Padding inside the box */
+    margin: 80px auto 20px auto; /* Margin to account for fixed navbar and bottom */
+    max-width: 95%; /* Set the wrapper width to 95% of the viewport */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow around the box */
+    border-radius: 10px; /* Rounded corners */
+    height: calc(100vh - 100px); /* Full height minus navbar height and bottom margin */
+    overflow: auto; /* Enable scroll within the page-wrapper */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+.container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* nav {
+    background: #1a2b5c;
+    color: #ffffff;
+    padding: 20px 0;
+    border-bottom: #6b6969 3px solid;
+    position: sticky;
+    top: 0;           
+    z-index: 1000;    
+} */
+
+nav h1 {
+    display: inline;
+    margin: 0.3em;
+    padding: 0;
+    float: left;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+    float: right;
+}
+
+nav ul li {
+    display: inline;
+    padding: 0 25px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.about-us, .functionalities {
+    padding: 30px 0;
+    color: #333;
+}
+
+.about-us h2, .functionalities h2 {
+    color: #14265a;
+    margin-bottom: 20px;
+    font-size: 3em;
+}
+.about-us p,.functionalities p{
+    font-size:1.5em;
+    line-height: 1.5em;
+}
+.cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin:1em;
+}
+
+.card {
+    background: #ffffff;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
+    flex-basis: 30%;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.card h3 {
+    color: #112a75;
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+.card p {
+    font-size: 1.5em;
+}
+
+.card:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5); /* More pronounced shadow */
+    background-color: #e0e7ff;
+}
+
+@media (max-width: 768px) {
+    .cards {
+        flex-direction: column;
+    }
+
+    .card {
+        flex-basis: 100%;
+    }
+
+    nav ul {
+        float: none;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        padding: 15px 0;
+    }
+}
+.drugs h2{
+    color: #14265a;
+    margin-bottom: 20px;
+    font-size: 3em;
+    
+}
+.drugs .cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Create 4 equal-width columns */
+    grid-gap: 20px; /* Space between the cards */
+    margin: 1em;
+}
+
+.drugs .card {
+    background: #ffffff;
+    padding: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.drugs .card h3 {
+    color: #112a75;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    font-weight: 300;
+}
+
+.drugs .card p {
+    font-size: 1.2em;
+}
+
+.drugs .card:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+    background-color: #e0e7ff;
+}
+
+@media (max-width: 1024px) {
+    .drugs .cards {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .drugs .cards {
+        grid-template-columns: 1fr; /* 1 column for small screens */
+    }
+}
+
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
+    <nav>
+        <div class="container">
+            <h1>Pharma Pulse</h1>
             <ul>
-                <li><a href="\search">Research corner</a></li>
-                <li><a href="\statistics">Charts</a></li>
-                <li><a href="\chatbot">Insight bot</a></li>
-                <li><a href="\prediction">Predict sales</a></li>
-                <li><a href="\drugs">Drugs</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Drugs</a></li>
+                <li><a href="#">Forecasting</a></li>
+                <li><a href="#">Dashboard</a></li>
             </ul>
-        </nav>
-        <div class="logo">
-            <h1>PHARMA PULSE</h1>
         </div>
-    </header>
+    </nav>
+    <div class="page-wrapper">
+      
 
-    <section class="about">
+        <section class="about-us">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>At Pharma Pulse, we specialize in data-driven insights that empower pharmaceutical companies to optimize their sales strategies and understand market trends. Our comprehensive sales data, spanning multiple pharmaceutical categories such as MO1AB, NO2BA, R03, and others, helps industry professionals gain an in-depth understanding of daily and seasonal sales patterns.</p>
+            </div>
+        </section>
+
+        <section class="functionalities">
+            <div class="container">
+                <h2>Our Functionalities</h2>
+                <div class="cards">
+                    <div class="card" onclick="highlightCard(this)">
+                        <h3>Model and Prediction</h3>
+                        <p>Predict future trends and sales with high accuracy using our sophisticated predictive analytics models.</p>
+                    </div>
+                    <div class="card" onclick="highlightCard(this)">
+                        <h3>Dashboard</h3>
+                        <p>Visualize and manage your data through an intuitive dashboard that provides real-time insights and customizable reports</p>
+                    </div>
+                    <div class="card" onclick="highlightCard(this)">
+                        <h3>Drug Information</h3>
+                        <p>Access detailed information on all drugs with a comprehensive view that provides insights into drug categories, uses, and effects.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="drugs">
+            <div class="container">
+                <h2>Drugs</h2>
+                <div class="cards">
+                    <div class="card">
+                        <h3>M01AB - Anti-inflammatory Drugs</h3>
+                        <p>Used to reduce inflammation and alleviate pain associated with conditions like arthritis.</p>
+                    </div>
+                    <div class="card">
+                        <h3>M01AE - Analgesic Drugs</h3>
+                        <p>Relieves pain without affecting consciousness; used for mild to moderate pain.</p>
+                    </div>
+                    <div class="card">
+                        <h3>N02BA - Pain Relievers</h3>
+                        <p>Manages pain from various conditions, including chronic pain and pain from injuries.</p>
+                    </div>
+                    <div class="card">
+                        <h3>N02BE - Specific Pain Relievers</h3>
+                        <p>Targeted for specific types of pain, such as neuropathic pain or pain associated with cancer.</p>
+                    </div>
+                    <div class="card">
+                        <h3>N05B - Psycholeptic Drugs</h3>
+                        <p>Treats psychiatric conditions such as anxiety, depression, and insomnia.</p>
+                    </div>
+                    <div class="card">
+                        <h3>N05C - Sedatives and Related Drugs</h3>
+                        <p>Induces calmness and sleep, often prescribed for sleep disorders or severe anxiety.</p>
+                    </div>
+                    <div class="card">
+                        <h3>R03 - Respiratory System Drugs</h3>
+                        <p>Treats respiratory conditions like asthma and chronic obstructive pulmonary disease (COPD).</p>
+                    </div>
+                    <div class="card">
+                        <h3>R06 - Antihistamines</h3>
+                        <p>Relieves allergy symptoms such as sneezing, itching, and runny nose.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
         
-        <div class="text-container">
-            <h2>About Us</h2>
-            <p>
-                At Pharmapulse, we specialize in data-driven insights that empower pharmaceutical companies to optimize their sales strategies and understand market trends. Our comprehensive sales data, spanning multiple pharmaceutical categories such as MO1AB, NO2BA, R03, and others, helps industry professionals gain an in-depth understanding of daily and seasonal sales patterns.
-            </p>
-            <a href="\details" style="scroll-behavior: smooth;" class="btn">View More</a>
-        </div>
-        <div class="image-container">
-            <img src="/static/images\firstpage.jpeg" alt="Medical Research">
-        </div>
-    </section>
-
-   
-<section class ="second">
-  <section class ="categories-wrapper">
-    <section class="categories">
-        <div class="category">
-            <a href="\mo1ab">
-            <img  src="/static/images\mo1ab.jpeg" alt="MO1AB">
-        </a>
-            <h3>MO1AB</h3>
-        </div>
-        
-        <div class="category">
-            <a href="\no2ba">
-            <img src="static\images\no2ba.jpeg" alt="NO2BA">
-        </a>
-            <h3>NO2BA</h3>
-        </div>
-        <div class="category">
-            <a href="\mo1ae">
-            <img src="static\images\mo1ae.jpeg" alt="MO1AE">
-            </a>
-            <h3>MO1AE</h3>
-        </div>
-        <div class="category">
-            <a href="\no5b">
-            <img src="static\images\drugs.jpeg" alt="N05B">
-            </a>
-            <h3>NO5B</h3>
-        </div>
-        <div class="category">
-            <a href="\no2ba">
-            <img src="static\images\drug4.png" alt="NO2BA">
-            </a>
-            <h3>NO2BE</h3>
-        </div>
-        <div class="category">
-            <a href="\no5c">
-            <img src="static\images\drug3.png" alt="no5c">
-            </a>
-            <h3>NO5C</h3>
-        </div>
-       
-    </section>
-</section>
-</section>
-
-<section class="third">
-    <div class="image-container">
-        <img src="static\images\research.jpeg" alt="Research Image">
     </div>
-<div class="research-section">
     
-    <div class="text-container">
-        <h2>Research</h2>
-        <p>
-            Our research focuses on analyzing daily and seasonal sales trends across key pharmaceutical drug categories like anti-inflammatory (M01AB), analgesics (N02BA), and respiratory treatments (R03). By leveraging this data, we develop predictive models to forecast drug demand and optimize supply chains, ensuring better drug availability and resource allocation.
-        </p>
-        <a href="#" class="visit-button">Visit Us</a>
-    </div>
-</div>
-</section>
+    <script>function highlightCard(card) {
+        // Toggle the highlight
+        card.classList.toggle('highlight');
+    }
+    
+    // Optional: Add CSS class to style highlighted cards
+    // Place this in styles.css
+    /*
+    .highlight {
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.3);
+        background-color: #d1e0ff;
+    }
+    */
+    </script>
+    <script src="https://cdn.botpress.cloud/webchat/v2.1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/0852c8fa-1d34-4f40-8f0d-9dc970425da5/webchat/v2.1/config.js"></script>
 
-<section class="fourth">
-    <div class="image-container">
-        <img src="static\images\drug.png" alt="Research Image">
-    </div>
-    <div class="drug-alert">
-        <div class="text-container">
-        <h2>Drug Alert</h2>
-        <p>
-            Stay informed about significant fluctuations in pharmaceutical sales trends, including potential shortages or surges 
-            in demand for critical drugs such as anti-inflammatories (MO1AB) and analgesics (NO2BA). Timely updates ensure you can 
-            respond swiftly to market changes and maintain optimal drug supply.
-        </p>
-        <a href="#" class="visit-button">Visit Us</a>
-    </div>
-    </div>
 
-</section>
-
-    <footer>
-        <p>© 2024 Pharma pulse. All Rights Reserved.</p>
-    </footer>
 </body>
 </html>
+
+
+
