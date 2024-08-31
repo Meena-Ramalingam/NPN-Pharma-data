@@ -21,6 +21,10 @@ def index():
 def forecasting():
     return render_template('forecasting.html')
 
+@app.route('/aboutus')
+def aboutus():
+    return render_template('aboutus.html')
+
 @app.route('/chatbot')
 def chatbot():
     return render_template('chatbot.html')
