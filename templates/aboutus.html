@@ -14,27 +14,27 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #ebe4e4; /* Light gray background for the page */
-    overflow: hidden; /* Prevent body from scrolling */
+    overflow: auto; /* Prevent body from scrolling */
 }
 
-nav {
+/* nav {
     background: #1a2b5c;
     color: #ffffff;
-    padding: 17px 0;
+    padding: 8px 0;
     border-bottom: #6b6969 3px solid;
-    position: fixed; /* Fix the navbar to the top */
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000; /* Ensure it stays above other content */
-    height: 80px; /* Adjust this value based on your actual navbar height */
-}
+    z-index: 1000; 
+    height: 80px; 
+} */
 
 .page-wrapper {
     background-color: #ffffff; /* White background for the content box */
     padding: 20px; /* Padding inside the box */
     margin: 80px auto 20px auto; /* Margin to account for fixed navbar and bottom */
-    max-width: 95%; /* Set the wrapper width to 95% of the viewport */
+    max-width: 100%; /* Set the wrapper width to 95% of the viewport */
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow around the box */
     border-radius: 10px; /* Rounded corners */
     height: calc(100vh - 100px); /* Full height minus navbar height and bottom margin */
@@ -56,32 +56,53 @@ nav {
     top: 0;           
     z-index: 1000;    
 } */
+header {
+    background-color: #1f2d56;
+    color: #fff;
+    padding: 1em 0; /* Adjusted padding */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em; /* Adjusted padding for smaller margin */
+    max-width: 100%; /* Ensure full width */
+    margin: auto; /* Center horizontally */
+}
 
 nav h1 {
-    display: inline;
     margin: 0.3em;
-    padding: 0;
-    float: left;
-    font-size: 2.5em;
-    font-weight: bold;
+    font-size: 3em; /* Font size in em */
 }
 
 nav ul {
-    padding: 0;
     list-style: none;
-    float: right;
+    margin: 0;
+    padding: 0;
+    display: flex;
 }
 
 nav ul li {
-    display: inline;
-    padding: 0 20px;
+    margin-left: 0.4em; /* Margin in em */
 }
 
 nav ul li a {
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
-    font-size: 1.4em;
+    font-size: 1.5em; /* Font size in em */
+    padding: 0.5em 1em; /* Padding in em */
+    transition: background-color 0.3s ease;
 }
+
+nav ul li a:hover {
+    background-color: #112a75;
+    border-radius: 0.5em; /* Border radius in em */
+}
+
 
 .about-us, .functionalities {
     padding: 30px 0;
@@ -238,6 +259,7 @@ nav ul li a {
     </style>
 </head>
 <body>
+    <header>
     <nav>
         <div class="container">
             <h1>Pharma Pulse</h1>
@@ -251,6 +273,7 @@ nav ul li a {
             </ul>
         </div>
     </nav>
+</header>
     <div class="page-wrapper">
       
 
