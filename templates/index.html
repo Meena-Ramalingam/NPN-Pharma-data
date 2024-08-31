@@ -20,25 +20,14 @@
             background-color: #ebe4e4;
         }
 
-        nav {
-            background: #1a2b5c;
-            color: #ffffff;
-            padding: 0.5rem 0;
-            border-bottom: #6b6969 0.1875rem solid;
-            position: fixed; 
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000; 
-            height: 3rem;
-        }
+       
 
         .page-wrapper {
             background-color: #ffffff;
             padding: 1.25rem;
             margin: 5rem auto 1.25rem auto;
             max-width: 95%;
-            box-shadow: 0px 0px 0.9375rem rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 0.2rem rgba(0, 0, 0, 0.1);
             border-radius: 0.625rem;
             height: calc(100vh - 6.25rem); 
             overflow:auto;
@@ -58,54 +47,61 @@
             overflow: hidden;
         }
 
-        header {
-            background-color: #1f2d56;
-            color: #fff;
-            padding: 0.625rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+       
 
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 0.625rem;
-            max-width: 100%; 
-            margin: auto; 
-        }
+        nav {
+    background: #1a2b5c;
+    color: #ffffff;
+    padding: 0.5rem 0;
+    border-bottom: #6b6969 0.1875rem solid;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 3rem;
+    
+}
 
-        nav h1 {
-            margin: 0.1875rem;
-            font-size: 2rem;
-            font-family: 'Raleway', sans-serif; /* Font for the title */
-        }
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.625rem;
+    max-width: 100%;
+    margin: auto;
+}
 
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
+nav h1 {
+    margin: 0.1875rem;
+    font-size: 2rem;
+    font-family: 'Raleway', sans-serif;
+}
 
-        nav ul li {
-            margin-left: 0.25rem; 
-        }
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
 
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 0.9375rem;
-            padding: 0.3125rem 0.625rem;
-            transition: background-color 0.3s ease;
-            font-family: 'Raleway', sans-serif; /* Font for nav links */
-        }
+nav ul li {
+    margin-left: 0.25rem;
+}
 
-        nav ul li a:hover {
-            background-color: #112a75;
-            border-radius: 0.3125rem; 
-        }
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9375rem;
+    padding: 0.3125rem 0.625rem;
+    transition: background-color 0.3s ease;
+    font-family: 'Raleway', sans-serif;
+}
+
+nav ul li a:hover {
+    background-color: #112a75;
+    border-radius: 0.3125rem;
+}
 
         .about-us, .functionalities {
             padding: 1.875rem 0; 
@@ -122,6 +118,7 @@
         .about-us p, .functionalities p {
             font-size: 1em; 
             line-height: 1.5rem; 
+            font-family: 'poppins';
         }
 
         .cards {
@@ -176,7 +173,7 @@
                 flex-basis: 100%;
             }
 
-            nav ul {
+            /* nav ul {
                 float: none;
                 text-align: center;
             }
@@ -184,7 +181,7 @@
             nav ul li {
                 display: block;
                 padding: 0.9375rem 0; 
-            }
+            } */
         }
 
         .drugs h2 {
@@ -253,7 +250,7 @@
     </style>
 </head>
 <body>
-    <header>
+    <!-- <header>
         <nav>
             <div class="container">
                 <h1>Pharma Pulse</h1>
@@ -267,7 +264,20 @@
                 </ul>
             </div>
         </nav>
-    </header>
+    </header> -->
+    <nav>
+        <div class="container">
+            <h1>Pharma Pulse</h1>
+            <ul>
+                <li><a href="\">Home</a></li>
+                <li><a href="\aboutus">About Us</a></li>
+                <li><a href="\forecasting">Forecasting</a></li>
+                <li><a href="\details">Details</a></li>
+                <li><a href="\dashboard">Dashboard</a></li>
+                <li><a href="\drugs">Drugs</a></li>
+            </ul>
+        </div>
+    </nav>
     <div class="page-wrapper">
       
 

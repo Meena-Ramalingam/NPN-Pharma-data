@@ -67,7 +67,7 @@ def statistics():
 
 @app.route('/details')
 def details():
-    return render_template('details.html')
+    return render_template('detail.html')
 
 @app.route('/drugs')
 def drugs():

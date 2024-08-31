@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pharma Pulse - Forecasting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <style>
-      html, body {
+       html, body {
     height: 100%; /* Full height for html and body */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
-    font-size: 16px; /* Base font size */
+    font-size: 1.1rem; /* Base font size (1rem = 8px) */
 }
 
 body {
     background-color: #f4f4f4;
-    font-family: Arial, sans-serif;
-    overflow:scroll;
+    font-family: 'Poppins', sans-serif;
+    overflow: auto;
 }
 
 header {
     background-color: #1f2d56;
     color: #fff;
-    padding: 1em 0; /* Adjusted padding */
+    padding: 0.5rem 0; /* Adjusted padding */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -31,14 +32,14 @@ nav .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1em; /* Adjusted padding for smaller margin */
+    padding: 0 0.5rem; /* Adjusted padding for smaller margin */
     max-width: 100%; /* Ensure full width */
     margin: auto; /* Center horizontally */
 }
 
 nav h1 {
-    margin: 0.3em;
-    font-size: 3em; /* Font size in em */
+    margin: 0.15rem;
+    font-size: 1.5rem; /* Font size in rem */
 }
 
 nav ul {
@@ -49,27 +50,27 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 0.4em; /* Margin in em */
+    margin-left: 0.2rem; /* Margin in rem */
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.5em; /* Font size in em */
-    padding: 0.5em 1em; /* Padding in em */
+    font-size: 0.75rem; /* Font size in rem */
+    padding: 0.25rem 0.5rem; /* Padding in rem */
     transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
     background-color: #112a75;
-    border-radius: 0.5em; /* Border radius in em */
+    border-radius: 0.25rem; /* Border radius in rem */
 }
 
 .forecasting {
-    padding: 1em; /* Padding in em */
+    padding: 0.5rem; /* Padding in rem */
     background-color: #fff;
-    margin: 0 1em; /* Add margin on left and right sides */
-    width: calc(100% - 2em); /* Full width minus margins */
+    margin: 0 0.5rem; /* Add margin on left and right sides */
+    width: calc(100% - 1rem); /* Full width minus margins */
     overflow: auto;
 }
 
@@ -82,15 +83,15 @@ nav ul li a:hover {
 .forecasting .content {
     display: flex;
     align-items: flex-start; /* Align items to the start of the flex container */
-    gap: 1em; /* Gap between image and text content */
+    gap: 0.5rem; /* Gap between image and text content */
 }
 
 .forecasting .plot {
     flex: 1; /* Flex to take available space */
     max-width: 50%; /* Maximum width for the image */
     height: auto; /* Maintain aspect ratio */
-    border-radius: 0.5em; /* Border radius in em */
-    box-shadow: 0px 0px 1em rgba(0, 0, 0, 0.1); /* Shadow with em units */
+    border-radius: 0.25rem; /* Border radius in rem */
+    box-shadow: 0px 0px 0.5rem rgba(0, 0, 0, 0.1); /* Shadow with rem units */
 }
 
 .forecasting .text-content {
@@ -100,33 +101,33 @@ nav ul li a:hover {
 
 .forecasting h2 {
     color: #1f2d56;
-    font-size: 2em; /* Font size in em */
-    margin-bottom: 1em; /* Margin below heading */
+    font-size: 1.5rem; /* Font size in rem */
+    margin-bottom: 0.5rem; /* Margin below heading */
 }
 
 .forecasting h3 {
     color: #1f2d56;
-    font-size: 1.5em; /* Font size in em */
-    margin-bottom: 0.5em; /* Margin below heading */
+    font-size: 0.75rem; /* Font size in rem */
+    margin-bottom: 0.25rem; /* Margin below heading */
 }
 
 .forecasting p {
-    font-size: 1.3em; /* Font size in em */
-    margin-bottom: 1em; /* Margin below paragraph */
+    font-size: 0.65rem; /* Font size in rem */
+    margin-bottom: 0.5rem; /* Margin below paragraph */
     color: #333;
 }
 
 .btn-prediction {
     background-color: #1f2d56;
     color: #fff;
-    padding: 1em 2em; /* Padding in em */
+    padding: 0.5rem 1rem; /* Padding in rem */
     border: none;
-    border-radius: 0.5em; /* Border radius in em */
-    font-size: 1.2em; /* Font size in em */
+    border-radius: 0.25rem; /* Border radius in rem */
+    font-size: 0.6rem; /* Font size in rem */
     cursor: pointer;
     transition: background-color 0.3s ease;
     display: block;
-    margin: 1em auto 0; /* Center button and add top margin */
+    margin: 0.5rem auto 0; /* Center button and add top margin */
 }
 
 .btn-prediction:hover {
@@ -181,11 +182,9 @@ nav ul li a:hover {
                 </div>
             </div>
             <button class="btn-prediction" onclick="window.location.href='/prediction';">Check Prediction</button>
-
         </div>
     </section>
     <script src="https://cdn.botpress.cloud/webchat/v2.1/inject.js"></script>
     <script src="https://mediafiles.botpress.cloud/0852c8fa-1d34-4f40-8f0d-9dc970425da5/webchat/v2.1/config.js"></script>
-
 </body>
 </html>
