@@ -5,284 +5,242 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pharma Pulse</title>
     <style>
-  html, body {
-    height: 100%; /* Full height for body and html */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+ 
+ html, body {
+            height: 100%; 
+            margin: 0; 
+            padding: 0; 
+            font-size: 1rem; /* Set the base font size to 10px (1rem = 10px) */
+        }
+
+        body {
+            font-style:'helvetico';
+            background-color: #ebe4e4;
+        }
+
+        nav {
+            background: #1a2b5c;
+            color: #ffffff;
+            padding: 0.5rem 0;
+            border-bottom: #6b6969 0.1875rem solid;
+            position: fixed; 
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000; 
+            height: 3rem; /* 80px -> 5rem */
+        }
+
+        .page-wrapper {
+            background-color: #ffffff;
+            padding: 1.25rem;
+            margin: 5rem auto 1.25rem auto;
+            max-width: 95%;
+            box-shadow: 0px 0px 0.9375rem rgba(0, 0, 0, 0.1);
+            border-radius: 0.625rem;
+            height: calc(100vh - 6.25rem); 
+            overflow:auto;
+            box-sizing: border-box;
+
+                /* Hide scrollbar but keep functionality */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        }
+        .page-wrapper::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #ebe4e4; /* Light gray background for the page */
-    
-}
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+        }
 
-nav {
-    background: #1a2b5c;
-    color: #ffffff;
-    padding: 8px 0;
-    border-bottom: #6b6969 3px solid;
-    position: fixed; /* Fix the navbar to the top */
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000; /* Ensure it stays above other content */
-    height: 80px; /* Adjust this value based on your actual navbar height */
-}
+        header {
+            background-color: #1f2d56;
+            color: #fff;
+            padding: 0.625rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-.page-wrapper {
-    background-color: #ffffff; /* White background for the content box */
-    padding: 20px; /* Padding inside the box */
-    margin: 80px auto 20px auto; /* Margin to account for fixed navbar and bottom */
-    max-width: 100%; /* Set the wrapper width to 95% of the viewport */
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow around the box */
-    border-radius: 10px; /* Rounded corners */
-    height: calc(100vh - 100px); /* Full height minus navbar height and bottom margin */
-    overflow:auto;
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
-}
-.container {
-    width: 90%;
-    margin: auto;
-    overflow: hidden;
-}
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 0.625rem;
+            max-width: 100%; 
+            margin: auto; 
+        }
 
-/* nav {
-    background: #1a2b5c;
-    color: #ffffff;
-    padding: 20px 0;
-    border-bottom: #6b6969 3px solid;
-    position: sticky;
-    top: 0;           
-    z-index: 1000;    
-} */
+        nav h1 {
+            margin: 0.1875rem;
+            font-size: 2rem; /* 3em -> 1.875rem */
+        }
 
-/* nav h1 {
-    display: inline;
-    margin: 0.3em;
-    padding: 0;
-    float: left;
-    font-size: 2.5em;
-    font-weight: bold;
-   
-}
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            
+        }
 
-nav ul {
-    padding: 0;
-    list-style: none;
-    float: right;
-}
+        nav ul li {
+            margin-left: 0.25rem; /* 0.4em -> 0.25rem */
+            
+        }
 
-nav ul li {
-    display: inline;
-    padding: 0 20px;
-}
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9375rem; /* 1.5em -> 0.9375rem */
+            padding: 0.3125rem 0.625rem; /* 0.5em 1em -> 0.3125rem 0.625rem */
+            transition: background-color 0.3s ease;
+        }
 
-nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1.4em;
-} */
+        nav ul li a:hover {
+            background-color: #112a75;
+            border-radius: 0.3125rem; /* 0.5em -> 0.3125rem */
+        }
 
-header {
-    background-color: #1f2d56;
-    color: #fff;
-    padding: 1em 0; /* Adjusted padding */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+        .about-us, .functionalities {
+            padding: 1.875rem 0; /* 30px -> 1.875rem */
+            color: #333;
+        }
 
-nav .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1em; /* Adjusted padding for smaller margin */
-    max-width: 100%; /* Ensure full width */
-    margin: auto; /* Center horizontally */
-}
+        .about-us h2, .functionalities h2 {
+            color: #14265a;
+            margin-bottom: 1.25rem; /* 20px -> 1.25rem */
+            font-size: 2rem; /* 2em -> 1.25rem */
+        }
 
-nav h1 {
-    margin: 0.3em;
-    font-size: 3em; /* Font size in em */
-}
+        .about-us p, .functionalities p {
+            font-size: 1em; /* 1.5em -> 0.9375rem */
+            line-height: 1.5rem; /* 1.5em -> 1.5rem */
+        }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
+        .cards {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 0.625rem; /* 1em -> 0.625rem */
+        }
 
-nav ul li {
-    margin-left: 0.4em; /* Margin in em */
-}
+        .card {
+            background: #ffffff;
+            padding: 0.625rem; /* 10px -> 0.625rem */
+            margin: 0.625rem 0; /* 10px 0 -> 0.625rem 0 */
+            box-shadow: 0px 0px 0.9375rem rgba(0, 0, 0, 0.8); /* 15px -> 0.9375rem */
+            flex-basis: 30%;
+            border-radius: 0.5rem; /* 8px -> 0.5rem */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none; 
+            color: inherit;
+        }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.5em; /* Font size in em */
-    padding: 0.5em 1em; /* Padding in em */
-    transition: background-color 0.3s ease;
-}
+        .card h3 {
+            color: #112a75;
+            margin-bottom: 0.9375rem; /* 15px -> 0.9375rem */
+            font-size: 1.25rem; /* 2em -> 1.25rem */
+        }
 
-nav ul li a:hover {
-    background-color: #112a75;
-    border-radius: 0.5em; /* Border radius in em */
-}
+        .card p {
+            font-size: 0.9375rem; /* 1.5em -> 0.9375rem */
+        }
 
+        .card:hover {
+            transform: scale(1.02); 
+            box-shadow: 0px 0px 1.5625rem rgba(0, 0, 0, 0.5); /* 25px -> 1.5625rem */
+            background-color: #e0e7ff;
+        }
 
-.about-us, .functionalities {
-    padding: 30px 0;
-    color: #333;
-}
+        .card.highlight {
+            border: 0.125rem solid #4CAF50; /* 2px -> 0.125rem */
+            box-shadow: 0px 0px 1.5625rem rgba(0, 0, 0, 0.5); /* 25px -> 1.5625rem */
+        }
 
-.about-us h2, .functionalities h2 {
-    color: #14265a;
-    margin-bottom: 20px;
-    font-size: 2em;
-}
-.about-us p,.functionalities p{
-    font-size:1.5em;
-    line-height: 1.5em;
-}
-.cards {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin:1em;
-}
+        @media (max-width: 768px) {
+            .cards {
+                flex-direction: column;
+            }
 
-/* .card {
-    background: #ffffff;
-    padding: 10px;
-    margin: 10px 0;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
-    flex-basis: 30%;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
+            .card {
+                flex-basis: 100%;
+            }
 
-.card h3 {
-    color: #112a75;
-    margin-bottom: 15px;
-    font-size: 2em;
-}
+            nav ul {
+                float: none;
+                text-align: center;
+            }
 
-.card p {
-    font-size: 1.5em;
-}
+            nav ul li {
+                display: block;
+                padding: 0.9375rem 0; /* 15px -> 0.9375rem */
+            }
+        }
 
-.card:hover {
-    transform: scale(1.02);
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5); 
-} */
+        .drugs h2 {
+            color: #14265a;
+            margin-bottom: 1.25rem; /* 20px -> 1.25rem */
+            font-size: 2rem; /* 2em -> 1.25rem */
+        }
 
-.card {
-    background: #ffffff;
-    padding: 10px;
-    margin: 10px 0;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
-    flex-basis: 30%;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    text-decoration: none; /* Ensure text is not underlined */
-    color: inherit; /* Inherit text color */
-}
+        .drugs .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 1.25rem; /* 20px -> 1.25rem */
+            margin: 0.625rem; /* 1em -> 0.625rem */
+        }
 
-.card h3 {
-    color: #112a75;
-    margin-bottom: 15px;
-    font-size: 2em;
-}
+        .drugs .card {
+            background: #ffffff;
+            padding: 0.625rem; /* 10px -> 0.625rem */
+            box-shadow: 0px 0px 0.9375rem rgba(0, 0, 0, 0.8); /* 15px -> 0.9375rem */
+            border-radius: 0.5rem; /* 8px -> 0.5rem */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
 
-.card p {
-    font-size: 1.5em;
-}
+        .drugs .card h3 {
+            color: #112a75;
+            margin-bottom: 0.9375rem; /* 15px -> 0.9375rem */
+            font-size: 1.125rem; /* 1.8em -> 1.125rem */
+            font-weight: 300;
+        }
 
-.card:hover {
-    transform: scale(1.02); /* Slight zoom effect on hover */
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5); /* More pronounced shadow */
-    background-color: #e0e7ff;
-}
+        .drugs .card p {
+            font-size: 0.75rem; /* 1.2em -> 0.75rem */
+        }
 
-.card.highlight {
-    border: 2px solid #4CAF50; /* Example highlight effect */
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5); /* Enhanced shadow */
-}
+        .drugs .card:hover {
+            transform: scale(1.02); 
+            box-shadow: 0px 1.5625rem 1.5625rem rgba(0, 0, 0, 0.2), 1.5625rem 0px 1.5625rem rgba(0, 0, 0, 0.2); /* 25px -> 1.5625rem */
+            background-color: #e0e7ff;
+        }
 
+        @media (max-width: 1024px) {
+            .drugs .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
 
-@media (max-width: 768px) {
-    .cards {
-        flex-direction: column;
-    }
+        @media (max-width: 768px) {
+            .drugs .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+        .bp-widget-launcher {
+            width: 1rem !important; /* Adjust the width */
+            height: 1rem !important; /* Adjust the height */
+            bottom: 1rem !important; /* Adjust the position if needed */
+            right: 1rem !important;  /* Adjust the position if needed */
+            size: 2rem;
+        }
+</style>
 
-    .card {
-        flex-basis: 100%;
-    }
-
-    nav ul {
-        float: none;
-        text-align: center;
-    }
-
-    nav ul li {
-        display: block;
-        padding: 15px 0;
-    }
-}
-.drugs h2{
-    color: #14265a;
-    margin-bottom: 20px;
-    font-size: 2em;
-    
-}
-.drugs .cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Create 4 equal-width columns */
-    grid-gap: 20px; /* Space between the cards */
-    margin: 1em;
-}
-
-.drugs .card {
-    background: #ffffff;
-    padding: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
-
-.drugs .card h3 {
-    color: #112a75;
-    margin-bottom: 15px;
-    font-size: 1.8em;
-    font-weight: 300;
-}
-
-.drugs .card p {
-    font-size: 1.2em;
-}
-
-.drugs .card:hover {
-    transform: scale(1.02); /* Slight zoom effect on hover */
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
-    background-color: #e0e7ff;
-}
-
-@media (max-width: 1024px) {
-    .drugs .cards {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
-    }
-}
-
-@media (max-width: 768px) {
-    .drugs .cards {
-        grid-template-columns: 1fr; /* 1 column for small screens */
-    }
-}
 
     </style>
 </head>
@@ -391,7 +349,13 @@ nav ul li a:hover {
         window.location.href = url;
     }, 300); // Adjust the delay as needed to match the duration of your highlight effect
 }
-
+window.addEventListener('load', function() {
+            const launcher = document.querySelector('.bp-widget-launcher');
+            if (launcher) {
+                launcher.style.width = '1rem';
+                launcher.style.height = '1rem';
+            }
+        });
 
     // <--function highlightCard(card) {
     //     // Toggle the highlight
