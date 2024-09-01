@@ -33,7 +33,7 @@ def aboutus():
 def chatbot():
     return render_template('chatbot.html')
 
-@app.route('/prediction')
+@app.route('/prediction2')
 def prediction():
     return render_template('predictions.html')
 
@@ -79,7 +79,7 @@ def drugs():
 # Path to the models folder
 models_folder = 'models'
 
-@app.route('/prediction2')
+@app.route('/prediction')
 def prediction2():
     return render_template('prediction2.html')
 
