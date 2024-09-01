@@ -3,6 +3,10 @@ import pickle
 import pandas as pd
 import os
 import sys
+from flask import Flask, jsonify, request
+# from flask_cors import CORS
+# import pickle
+import pandas as pd
 # import pdarima
 
 
@@ -155,6 +159,11 @@ def predict_weekly_sales(start_date, end_date):
     else:
         result = {"error": "Date out of prediction range"}
     return result
+
+
+
+
+
 
 
 
