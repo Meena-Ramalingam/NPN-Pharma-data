@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharma Pulse</title>
+    <style>
+        html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 1.1rem;
+}
+
+body {
+    background-color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
+    overflow: auto;
+}
+
+header {
+    background-color: #1f2d56;
+    color: #fff;
+    padding: 0.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    background: #1a2b5c;
+    color: #ffffff;
+    padding: 0.5rem 0;
+    border-bottom: #6b6969 0.1875rem solid;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 3rem;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.625rem;
+    max-width: 100%;
+    margin: auto;
+}
+
+nav h1 {
+    margin: 0.1875rem;
+    font-size: 1.8rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 0.25rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    padding: 0.3125rem 0.625rem;
+    transition: background-color 0.3s ease;
+    font-family: 'Raleway', sans-serif;
+}
+
+nav ul li a:hover {
+    background-color: #112a75;
+    border-radius: 0.3125rem;
+}
+
+.drug-info {
+    padding: 1rem 0.5rem;
+    width: calc(100% - 1rem);
+}
+
+.drug-info h2 {
+    color: #112a75;
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.card {
+    background-color: #fff;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    color: #1f2d56;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .drug-info {
+        padding: 0.5rem;
+    }
+
+    .card {
+        padding: 0.75rem;
+    }
+
+    .card h3 {
+        font-size: 1rem;
+    }
+
+    .card p {
+        font-size: 0.65rem;
+    }
+}
+@media (max-width: 768px) {
+    nav ul {
+        float: none;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        padding: 0.75rem 0;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <h1>Pharma Pulse</h1>
+            <ul>
+                <li><a href="\">Home</a></li>
+                <li><a href="\aboutus">About Us</a></li>
+                <li><a href="#">Drugs</a></li>
+                <li><a href="\details">Details</a></li>
+                <li><a href="\forecasting">Forecasting</a></li>
+                <li><a href="#">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <main class="drug-info container">
+        <h2>Drug Information</h2>
+
+        <!-- Drug Card 1 -->
+        <section class="card">
+            <h3>M01AB - Anti-inflammatory Drugs</h3>
+            <p><strong>Usage:</strong> These drugs are used to reduce inflammation and alleviate pain associated with conditions such as arthritis. They are effective in treating symptoms like swelling and joint pain.</p>
+            <p><strong>Details:</strong> M01AB includes non-steroidal anti-inflammatory drugs (NSAIDs) like ibuprofen and naproxen. These medications work by inhibiting enzymes that contribute to inflammation and pain.</p>
+            <p><strong>Common Examples:</strong> Ibuprofen, Naproxen, Indomethacin.</p>
+        </section>
+
+        <!-- Drug Card 2 -->
+        <section class="card">
+            <h3>M01AE - Analgesic Drugs</h3>
+            <p><strong>Usage:</strong> These drugs are used to relieve pain without affecting consciousness. They are commonly used to manage mild to moderate pain.</p>
+            <p><strong>Details:</strong> M01AE includes drugs such as acetaminophen and opioids. Acetaminophen is used for general pain relief, while opioids are used for more severe pain but have a risk of dependency.</p>
+            <p><strong>Common Examples:</strong> Acetaminophen, Codeine, Oxycodone.</p>
+        </section>
+
+        <!-- Drug Card 3 -->
+        <section class="card">
+            <h3>N02BA - Pain Relief</h3>
+            <p><strong>Usage:</strong> These drugs are used to treat mild to moderate pain, including headaches, muscle aches, and toothaches.</p>
+            <p><strong>Details:</strong> N02BA includes aspirin and other non-opioid analgesics.</p>
+            <p><strong>Common Examples:</strong> Aspirin, Paracetamol.</p>
+        </section>
+
+    <!-- Drug Card 4 -->
+<section class="card">
+    <h3>N02BE - Specific Pain Relievers</h3>
+    <p><strong>Usage:</strong> These drugs are targeted for specific types of pain, including neuropathic pain or pain associated with cancer.</p>
+    <p><strong>Details:</strong> N02BE includes certain opioid combinations and specialized formulations designed for more targeted pain relief.</p>
+    <p><strong>Common Examples:</strong> Oxycodone-Acetaminophen, Methadone.</p>
+</section>
+
+<!-- Drug Card 5 -->
+<section class="card">
+    <h3>N05B - Psycholeptic Drugs</h3>
+    <p><strong>Usage:</strong> These drugs are used to treat psychiatric conditions such as anxiety, depression, and insomnia.</p>
+    <p><strong>Details:</strong> N05B includes sedatives, anxiolytics, and hypnotics that help in managing symptoms related to mental health disorders.</p>
+    <p><strong>Common Examples:</strong> Diazepam, Lorazepam, Clonazepam.</p>
+</section>
+
+<!-- Drug Card 6 -->
+<section class="card">
+    <h3>N05C - Sedatives and Related Drugs</h3>
+    <p><strong>Usage:</strong> These drugs are used to induce calmness and sleep, and are often prescribed for sleep disorders or severe anxiety.</p>
+    <p><strong>Details:</strong> N05C includes benzodiazepines and other sedative-hypnotics that act on the central nervous system to produce calming effects.</p>
+    <p><strong>Common Examples:</strong> Alprazolam, Temazepam, Zolpidem.</p>
+</section>
+
+<!-- Drug Card 7 -->
+<section class="card">
+    <h3>R03 - Respiratory System Drugs</h3>
+    <p><strong>Usage:</strong> These drugs are used to treat respiratory conditions such as asthma and chronic obstructive pulmonary disease (COPD).</p>
+    <p><strong>Details:</strong> R03 includes bronchodilators that help open airways and corticosteroids that reduce inflammation in the lungs.</p>
+    <p><strong>Common Examples:</strong> Salbutamol, Budesonide, Formoterol.</p>
+</section>
+
+<!-- Drug Card 8 -->
+<section class="card">
+    <h3>R06 - Antihistamines</h3>
+    <p><strong>Usage:</strong> These drugs are used to relieve allergy symptoms such as sneezing, itching, and runny nose.</p>
+    <p><strong>Details:</strong> R06 includes antihistamines that block histamine receptors, which reduces allergic reactions.</p>
+    <p><strong>Common Examples:</strong> Loratadine, Cetirizine, Diphenhydramine.</p>
+</section>
+
+
+        <!-- More cards can be added similarly -->
+    </main>
+</body>
+
+</html>
