@@ -41,6 +41,10 @@ def prediction():
 def search():
     return render_template('search.html')
 
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
+
 @app.route('/no5c')
 def no5c():
     return render_template('no5c.html')
