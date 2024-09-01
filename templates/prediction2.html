@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get your predictions here!!</title>
+    <style>
+        /* Existing CSS */
+        #result {
+            margin-top: 1.25rem; /* Margin in rem */
+            font-weight: bold;
+            font-size: 0.8rem; /* Font size in rem */
+        }
+
+        .bp-widget-launcher {
+            width: 0.5rem !important;
+            height: 0.5rem !important;
+            bottom: 0.5rem !important;
+            right: 0.5rem !important;
+            size: 0.8rem;
+            overflow: hidden;
+        }
+
+        /* Import Poppins font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        html {
+            font-size: 1rem; /* Base font size (1rem = 10px, now set to 16px) */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding-top: 6rem; /* Adjusted padding based on new font size */
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.625rem; /* Adjusted padding */
+            flex-grow: 1;
+            box-sizing: border-box;
+        }
+
+        .container-left,
+        .container-right {
+            background-color: #ffffff;
+            padding: 0.625rem; /* Adjusted padding */
+            border-radius: 0.3125rem; /* Adjusted border-radius */
+            box-shadow: 0px 0.1875rem 0.375rem rgba(0, 0, 0, 0.1); /* Adjusted shadow */
+            height: auto;
+            box-sizing: border-box;
+        }
+
+        .container-left {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container-left h2,
+        .container-left h3 {
+            color: #1f2d56;
+            font-size: 1.8rem;
+        }
+
+        .container-left p {
+            font-size: 1rem; /* Adjusted font size */
+        }
+
+        .container-right {
+            width: 35%;
+        }
+
+        .container-right h2 {
+            color: #1f2d56;
+            font-size: 1.8rem; /* Adjusted font size */
+        }
+
+        .container-left ul {
+            font-size: 1rem;
+        }
+
+        label {
+            font-size: 0.625rem; /* Adjusted font size */
+            font-weight: bold;
+            color: #343a40;
+            display: block;
+            margin-bottom: 0.3125rem; /* Adjusted margin */
+        }
+
+        select,
+        input {
+            width: 100%;
+            padding: 0.5rem; /* Adjusted padding */
+            margin-bottom: 0.75rem; /* Adjusted margin */
+            border-radius: 0.3125rem; /* Adjusted border-radius */
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 0.625rem; /* Adjusted font size */
+            box-shadow: 0px 0px 0.125rem rgba(0, 0, 0, 0.1); /* Adjusted shadow */
+        }
+
+        button {
+            background-color: #1f2d56;
+            color: #ffffff;
+            padding: 0.5rem 0.625rem; /* Adjusted padding */
+            border: none;
+            border-radius: 0.3125rem; /* Adjusted border-radius */
+            cursor: pointer;
+            font-size: 0.625rem; /* Adjusted font size */
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #1e2d56;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Additional adjustments for responsive design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .container-left,
+            .container-right {
+                width: 100%;
+            }
+        }
+
+        nav {
+            background: #1a2b5c;
+            color: #ffffff;
+            padding: 0.3125rem 0; /* Adjusted padding */
+            border-bottom: #6b6969 0.125rem solid; /* Adjusted border */
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            height: 2.5rem; /* Adjusted height */
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 0.375rem; /* Adjusted padding */
+            max-width: 100%;
+            margin: auto;
+        }
+
+        nav h1 {
+            margin: 0.125rem; /* Adjusted margin */
+            font-size: 1.8rem; /* Adjusted font size */
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 0.1875rem; /* Adjusted margin */
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.8rem; /* Adjusted font size */
+            padding: 0.1875rem 0.375rem; /* Adjusted padding */
+            transition: background-color 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav ul li a:hover {
+            background-color: #112a75;
+            border-radius: 0.1875rem; /* Adjusted border-radius */
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                float: none;
+                text-align: center;
+            }
+
+            nav ul li {
+                display: block;
+                padding: 0.5rem 0; /* Adjusted padding */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <h1>Pharma Pulse</h1>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/aboutus">About Us</a></li>
+                <li><a href="/drug-info">Drugs</a></li>
+                <li><a href="/details">Architecture</a></li>
+                <li><a href="/forecasting">Forecasting</a></li>
+                <li><a href="#">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="container-left">
+            <h2>Welcome to our prediction tool!</h2>
+            <p>You can use this tool to forecast drug sales based on your selected frequency. Whether you need predictions for daily, weekly, or monthly intervals, simply choose the appropriate frequency from the dropdown menu. For daily predictions, select a specific date. For weekly predictions, provide a start and end date to get insights over a range. The tool will generate accurate forecasts based on the provided data, helping you make informed decisions.</p>
+            <h3>Drug Categories and Examples</h3>
+            <ul>
+                <li><strong>M01AB - Anti-inflammatory Drugs:</strong> Ibuprofen, Naproxen, Diclofenac</li>
+                <li><strong>M01AE - Analgesic Drugs:</strong> Acetaminophen, Codeine, Oxycodone</li>
+                <li><strong>N02BA - Pain Relievers:</strong> Morphine, Codeine, Hydrocodone</li>
+                <li><strong>N02BE - Specific Pain Relievers:</strong> Hydrocodone-Acetaminophen, Oxycodone-Acetaminophen</li>
+                <li><strong>N05B - Psycholeptic Drugs:</strong> Diazepam, Lorazepam, Zolpidem</li>
+                <li><strong>N05C - Sedatives and Related Drugs:</strong> Alprazolam, Temazepam, Clonazepam</li>
+                <li><strong>R03 - Respiratory System Drugs:</strong> Albuterol, Fluticasone, Ipratropium</li>
+                <li><strong>R06 - Antihistamines:</strong> Loratadine, Cetirizine, Diphenhydramine</li>
+            </ul>
+        </div>
+
+        <div class="container-right">
+            <h2>Get your predictions here!!</h2>
+            <form id="dateForm">
+                <label for="dateType">Choose Frequency:</label>
+                <select id="dateType" name="dateType" required>
+                    <option value="">--Select--</option>
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                </select>
+
+                <label for="dateInput" id="dateLabel">Select Date:</label>
+                <input type="date" id="dateInput" name="dateInput" required>
+
+                <button type="button" onclick="submitForm()">Predict</button>
+            </form>
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <script>
+      
+
+        function submitForm() {
+            const frequency = document.getElementById('dateType').value;
+            const date = document.getElementById('dateInput').value;
+
+            console.log(frequency);
+            console.log(date);
+
+            if (!frequency || !date) {
+                alert('Please select both frequency and date.');
+                return;
+            }
+
+            const payload = {
+                type: frequency,
+                date: date
+            };
+
+            fetch('http://localhost:5000/forecast', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    displayResult(data);
+                    console.log(data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while fetching predictions.');
+                });
+        }
+
+        function displayResult(data) {
+    const resultDiv = document.getElementById('result');
+    let tableContent = '<table border="1" cellpadding="10"><tr><th>Drug Code</th><th>Prediction</th></tr>';
+    
+    for (const [drug, prediction] of Object.entries(data)) {
+        tableContent += `<tr><td>${drug}</td><td>${prediction}</td></tr>`;
+    }
+    
+    tableContent += '</table>';
+    resultDiv.innerHTML = `<h3>Predictions:</h3>${tableContent}`;
+}
+
+    </script>
+    <script src="https://cdn.botpress.cloud/webchat/v2.1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/0852c8fa-1d34-4f40-8f0d-9dc970425da5/webchat/v2.1/config.js"></script>
+</body>
+
+</html>

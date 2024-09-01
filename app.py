@@ -79,6 +79,10 @@ def drugs():
 # Path to the models folder
 models_folder = 'models'
 
+@app.route('/prediction2')
+def prediction2():
+    return render_template('prediction2.html')
+
 # Load models for weekly and daily predictions
 drugs = ['M01AB', 'M01AE', 'N02BA', 'N02BE', 'N05B', 'N05C', 'R03', 'R06']
 
