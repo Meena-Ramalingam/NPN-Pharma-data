@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get your predictions here!!</title>
     <style>
-        /* Import Poppins font */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+        /* Import Poppins and Raleway fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Raleway:wght@400;600&display=swap');
 
         html {
             font-size: 0.8rem; /* Base font size (1rem = 10px) */
@@ -27,42 +27,54 @@
         nav {
             background: #1a2b5c;
             color: #ffffff;
-            padding: 1.7rem 0;
-            border-bottom: #6b6969 0.3rem solid;
+            padding: 0.5rem 0;
+            border-bottom: #6b6969 0.1875rem solid;
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            height: 3rem; /* Adjusted height */
-            width: 100%;
+            height: 3rem;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 0.625rem;
+            max-width: 100%;
+            margin: auto;
         }
 
         nav h1 {
-            display: inline;
-            margin: 0.1rem;
-            padding: 0;
-            float: left;
-            font-size: 3rem; /* Font size in rem */
-            font-weight: bold;
+            margin: 0.1875rem;
+            font-size: 2rem;
+            font-family: 'Raleway', sans-serif;
         }
 
         nav ul {
-            padding: 0;
             list-style: none;
-            float: right;
             margin: 0;
+            padding: 0;
+            display: flex;
         }
 
         nav ul li {
-            display: inline;
-            padding: 0 2.5rem; /* Padding in rem */
+            margin-left: 0.25rem;
         }
 
         nav ul li a {
-            color: #ffffff;
+            color: #fff;
             text-decoration: none;
-            font-size: 1.4rem; /* Font size in rem */
+            font-size: 0.9375rem;
+            padding: 0.3125rem 0.625rem;
+            transition: background-color 0.3s ease;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        nav ul li a:hover {
+            background-color: #112a75;
+            border-radius: 0.3125rem;
         }
 
         .container {
@@ -159,19 +171,17 @@
             .container-left, .container-right {
                 width: 100%;
             }
+
+            nav ul {
+                float: none;
+                text-align: center;
+            }
+
+            nav ul li {
+                display: block;
+                padding: 0.75rem 0;
+            }
         }
-
-        @media (max-width: 768px) {
-    nav ul {
-        float: none;
-        text-align: center;
-    }
-
-    nav ul li {
-        display: block;
-        padding: 0.75rem 0;
-    }
-}
     </style>
 </head>
 <body>
@@ -252,28 +262,22 @@
         }
 
         function submitForm() {
-            const form = document.getElementById('dateForm');
-            const formData = new FormData(form);
-            
-            fetch('/submit', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                displayResult(data);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        }
+            const dateType = document.getElementById('dateType').value;
+            const singleDate = document.getElementById('singleDate').value;
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+            let resultText = '';
 
-        function displayResult(data) {
-            const resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = '<h3>Predictions:</h3><pre>' + JSON.stringify(data, null, 2) + '</pre>';
+            if (dateType === 'daily' && singleDate) {
+                resultText = `Predicted sales for ${singleDate}`;
+            } else if (dateType === 'weekly' && startDate && endDate) {
+                resultText = `Predicted sales from ${startDate} to ${endDate}`;
+            } else {
+                resultText = 'Please fill out all required fields';
+            }
+
+            document.getElementById('result').innerText = resultText;
         }
     </script>
-    <script src="https://cdn.botpress.cloud/webchat/v2.1/inject.js"></script>
-    <script src="https://mediafiles.botpress.cloud/0852c8fa-1d34-4f40-8f0d-9dc970425da5/webchat/v2.1/config.js"></script>
 </body>
 </html>
