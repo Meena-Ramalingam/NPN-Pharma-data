@@ -85,4 +85,4 @@ Pharma Pulse is a web-based analytics dashboard and chatbot platform for pharmac
 
 ## License
 
-This project is for educational and
+This project is for educational and demonstration purposes.
